@@ -1,0 +1,4139 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AbusiveReport {
+  createdAt: DateTime
+  id: ID
+  message: String!
+  model_id: ID
+  model_type: String!
+  updatedAt: DateTime
+  user: User!
+  user_id: Float
+}
+
+input AbusiveReportInputType {
+  message: String!
+  model_id: ID
+  model_type: String!
+  user: UserInputType!
+  user_id: Float
+}
+
+input AcceptAbusiveReportInput {
+  createdAt: DateTime
+  id: ID
+  message: String!
+  model_id: ID
+  model_type: String!
+  updatedAt: DateTime
+  user: UserInputType!
+  user_id: Float
+}
+
+input AddNewCardInput {
+  default_card: Boolean!
+  method_key: String!
+}
+
+input AddPointsInput {
+  customer_id: ID!
+  points: Int!
+}
+
+input AddStaffInput {
+  email: String!
+  name: String!
+  password: String!
+  shop_id: ID!
+}
+
+type Address {
+  address: UserAddress
+  customer: User
+  default: Boolean
+  id: ID!
+  location: GoogleMapLocation
+  title: String
+  type: AddressType
+}
+
+input AddressHasMany {
+  upsert: [UserAddressUpsertInput]
+}
+
+input AddressInputType {
+  address: UserAddressInputType
+  customer: UserInputType
+  default: Boolean
+  id: ID!
+  location: GoogleMapLocationInput
+  title: String
+  type: AddressType
+}
+
+enum AddressType {
+  BILLING
+  SHIPPING
+}
+
+type Ai {
+  result: String!
+  status: String!
+}
+
+input AiInput {
+  prompt: String!
+}
+
+type AllInput {
+  all: PushNotification
+}
+
+input AllInputInput {
+  all: PushNotificationInput
+}
+
+type Analytics {
+  createdAt: DateTime
+  id: ID
+  monthlyTotalOrderByStatus: OrderByStatus
+  newCustomers: Int
+  todayTotalOrderByStatus: OrderByStatus
+  todaysRevenue: Float
+  totalOrders: Int
+  totalRefunds: Float
+  totalRevenue: Float
+  totalShops: Float
+  totalVendors: Float
+  totalYearSaleByMonth: [TotalYearSaleByMonth!]
+  updatedAt: DateTime
+  weeklyTotalOrderByStatus: OrderByStatus
+  yearlyTotalOrderByStatus: OrderByStatus
+}
+
+input ApproveShopInput {
+  admin_commission_rate: Float
+  id: ID
+}
+
+input ApproveWithdrawInput {
+  id: ID
+  status: WithdrawStatus
+}
+
+type AskForAQuote {
+  content: String!
+  enable: Boolean!
+  quote: String!
+}
+
+input AskForAQuoteInputType {
+  content: String!
+  enable: Boolean!
+  quote: String!
+}
+
+type Attachment {
+  id: ID
+  original: String
+  thumbnail: String
+}
+
+input AttachmentInput {
+  id: ID
+  original: String
+  thumbnail: String
+}
+
+type Attribute {
+  createdAt: DateTime
+  id: ID
+  language: String
+  name: String!
+  shop: Shop!
+  shop_id: String!
+  slug: String!
+  translated_languages: [String!]!
+  updatedAt: DateTime
+  values: [AttributeValue!]!
+}
+
+input AttributeInputType {
+  language: String
+  name: String!
+  shop: ShopInputType!
+  shop_id: String!
+  slug: String!
+  translated_languages: [String!]!
+  values: [AttributeValueInputType!]!
+}
+
+type AttributeValue {
+  attribute: Attribute!
+  createdAt: DateTime
+  id: ID
+  meta: String
+  shop_id: Int!
+  updatedAt: DateTime
+  value: String!
+}
+
+input AttributeValueInput {
+  id: ID
+  language: String
+  meta: String
+  value: String!
+}
+
+input AttributeValueInputType {
+  attribute: AttributeInputType!
+  meta: String
+  shop_id: Int!
+  value: String!
+}
+
+type AuthResponse {
+  accessToken: String!
+  refreshToken: String!
+  user: User!
+}
+
+type Author {
+  bio: String
+  born: String
+  cover_image: Attachment
+  createdAt: DateTime
+  death: String
+  id: ID
+  image: Attachment
+  is_approved: Boolean
+  language: String
+  languages: String
+  name: String!
+  products_count: Int
+  quote: String
+  slug: String
+  socials: [ShopSocials!]
+  translated_languages: [String!]
+  updatedAt: DateTime
+}
+
+input AuthorInputType {
+  bio: String
+  born: String
+  cover_image: AttachmentInput
+  death: String
+  image: AttachmentInput
+  is_approved: Boolean
+  language: String
+  languages: String
+  name: String!
+  products_count: Int
+  quote: String
+  slug: String
+  socials: [ShopSocialInput!]
+  translated_languages: [String!]
+}
+
+type AuthorPaginator {
+  data: [Author!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type Balance {
+  admin_commission_rate: Float!
+  current_balance: Float!
+  id: ID
+  payment_info: PaymentInfo
+  shop: Shop!
+  total_earnings: Float!
+  withdrawn_amount: Float!
+}
+
+input BalanceInput {
+  id: ID
+  payment_info: PaymentInfoInput
+}
+
+input BalanceInputType {
+  admin_commission_rate: Float!
+  current_balance: Float!
+  id: ID
+  payment_info: PaymentInfoInput
+  shop: ShopInputType!
+  total_earnings: Float!
+  withdrawn_amount: Float!
+}
+
+type Banner {
+  createdAt: DateTime
+  description: String
+  id: ID
+  image: Attachment
+  title: String
+  updatedAt: DateTime
+}
+
+input BannerInputType {
+  description: String
+  image: AttachmentInput
+  title: String
+}
+
+type BannerType {
+  button1Link: String
+  button1Name: String
+  button2Link: String
+  button2Name: String
+  description: String!
+  image: Attachment
+  newsTickerTitle: String
+  newsTickerURL: String
+  title: String
+}
+
+input BannerTypeInputType {
+  button1Link: String
+  button1Name: String
+  button2Link: String
+  button2Name: String
+  description: String!
+  image: AttachmentInput
+  newsTickerTitle: String
+  newsTickerURL: String
+  title: String
+}
+
+type BecameSeller {
+  banner: BannerType
+  commissionDescription: String
+  commissionTitle: String
+  contact: CommonTitleDescription
+  dashboard: Showcase
+  defaultCommissionDetails: String
+  defaultCommissionRate: Float
+  faqDescription: String
+  faqItems: [CommonTitleDescription!]
+  faqTitle: String
+  guidelineDescription: String
+  guidelineItems: [GuidelineItems!]
+  guidelineTitle: String
+  id: String
+  isMultiCommissionRate: Boolean
+  language: String
+  page_options: BecameSellerOptions
+  purposeDescription: String
+  purposeItems: [BusinessPurposeItem!]
+  purposeTitle: String
+  sellerOpportunity: Showcase
+  sellingStepsDescription: String
+  sellingStepsItem: [SellingStepItem!]
+  sellingStepsTitle: String
+  userStories: [UserStory!]
+  userStoryDescription: String
+  userStoryTitle: String
+}
+
+input BecameSellerInputType {
+  banner: BannerTypeInputType
+  commissionDescription: String
+  commissionTitle: String
+  contact: CommonTitleDescriptionInputType
+  dashboard: ShowcaseInputType
+  defaultCommissionDetails: String
+  defaultCommissionRate: Float
+  faqDescription: String
+  faqItems: [CommonTitleDescriptionInputType!]
+  faqTitle: String
+  guidelineDescription: String
+  guidelineItems: [GuidelineItemsInputType!]
+  guidelineTitle: String
+  id: String
+  isMultiCommissionRate: Boolean
+  language: String
+  page_options: BecameSellerOptionsInputType
+  purposeDescription: String
+  purposeItems: [BusinessPurposeItemInputType!]
+  purposeTitle: String
+  sellerOpportunity: ShowcaseInputType
+  sellingStepsDescription: String
+  sellingStepsItem: [SellingStepItemInputType!]
+  sellingStepsTitle: String
+  userStories: [UserStoryInputType!]
+  userStoryDescription: String
+  userStoryTitle: String
+}
+
+type BecameSellerOptions {
+  banner: BannerType
+  commissionDescription: String
+  commissionTitle: String
+  contact: CommonTitleDescription
+  dashboard: Showcase
+  defaultCommissionDetails: String
+  defaultCommissionRate: Float
+  faqDescription: String
+  faqItems: [CommonTitleDescription!]
+  faqTitle: String
+  guidelineDescription: String
+  guidelineItems: [GuidelineItems!]
+  guidelineTitle: String
+  isMultiCommissionRate: Boolean
+  purposeDescription: String
+  purposeItems: [BusinessPurposeItem!]
+  purposeTitle: String
+  sellerOpportunity: Showcase
+  sellingStepsDescription: String
+  sellingStepsItem: [SellingStepItem!]
+  sellingStepsTitle: String
+  userStories: [UserStory!]
+  userStoryDescription: String
+  userStoryTitle: String
+}
+
+input BecameSellerOptionsInputType {
+  banner: BannerTypeInputType
+  commissionDescription: String
+  commissionTitle: String
+  contact: CommonTitleDescriptionInputType
+  dashboard: ShowcaseInputType
+  defaultCommissionDetails: String
+  defaultCommissionRate: Float
+  faqDescription: String
+  faqItems: [CommonTitleDescriptionInputType!]
+  faqTitle: String
+  guidelineDescription: String
+  guidelineItems: [GuidelineItemsInputType!]
+  guidelineTitle: String
+  isMultiCommissionRate: Boolean
+  purposeDescription: String
+  purposeItems: [BusinessPurposeItemInputType!]
+  purposeTitle: String
+  sellerOpportunity: ShowcaseInputType
+  sellingStepsDescription: String
+  sellingStepsItem: [SellingStepItemInputType!]
+  sellingStepsTitle: String
+  userStories: [UserStoryInputType!]
+  userStoryDescription: String
+  userStoryTitle: String
+}
+
+type BecomeSellerWithCommission {
+  commissions: [CommissionItem!]
+  createdAt: DateTime
+  id: ID
+  language: String
+  page_options: BecameSeller
+  updatedAt: DateTime
+}
+
+input BecomeSellerWithCommissionInput {
+  commissions: [CommissionInputType!]
+  createdAt: DateTime
+  id: ID
+  language: String
+  page_options: BecameSellerInputType
+  updatedAt: DateTime
+}
+
+type BusinessPurposeItem {
+  description: String
+  icon: IconValue!
+  id: String
+  title: String!
+}
+
+input BusinessPurposeItemInputType {
+  description: String
+  icon: IconValueInputType!
+  id: String
+  title: String!
+}
+
+type Card {
+  createdAt: DateTime
+  default_card: Boolean!
+  expires: String
+  fingerprint: String
+  id: ID
+  last4: String
+  method_key: String!
+  network: String
+  origin: String
+  owner_name: String
+  payment_gateway_id: String
+  payment_gateways: PaymentGateWay
+  type: String
+  updatedAt: DateTime
+  verification_check: String
+}
+
+input CardInput {
+  cvv: String!
+  email: String
+  expiryMonth: String!
+  expiryYear: String!
+  number: String!
+}
+
+type Category {
+  children: [Category]
+  createdAt: DateTime
+  details: String
+  icon: String
+  id: ID
+  image: Attachment
+  language: String!
+  name: String!
+  parent: Category
+  parent_id: ID
+  products: [Product]
+  products_count: Int
+  slug: String!
+  sub_categories: [Category]
+  translated_languages: [String!]!
+  type: Type
+  updatedAt: DateTime
+}
+
+input CategoryInputType {
+  children: [CategoryInputType]
+  details: String
+  icon: String
+  image: AttachmentInput
+  language: String!
+  name: String!
+  parent: CategoryInputType
+  parent_id: ID
+  products: [ProductInputType]
+  products_count: Int
+  slug: String!
+  sub_categories: [CategoryInputType]
+  translated_languages: [String!]!
+  type: TypeInputType
+}
+
+type CategoryPaginator {
+  data: [Category!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type CategoryWiseProduct {
+  category_id: ID
+  category_name: String
+  createdAt: DateTime
+  id: ID
+  product_count: Int
+  shop_name: String
+  updatedAt: DateTime
+}
+
+type CategoryWiseProductSale {
+  category_id: ID
+  category_name: String
+  createdAt: DateTime
+  id: ID
+  shop_name: String
+  total_sales: Int
+  updatedAt: DateTime
+}
+
+input ChangePasswordInput {
+  newPassword: String!
+  oldPassword: String!
+}
+
+input CheckoutVerificationInput {
+  amount: Float!
+  billing_address: UserAddressInput
+  customer_id: String
+  products: [ConnectProductOrderPivot!]!
+  shipping_address: UserAddressInput
+}
+
+input CommissionInputType {
+  commission: Float
+  description: String
+  id: String
+  image: AttachmentInput
+  language: String
+  level: String
+  max_balance: Float
+  min_balance: Float
+  sub_level: String
+}
+
+type CommissionItem {
+  commission: Float
+  description: String
+  id: String
+  image: Attachment
+  language: String
+  level: String
+  max_balance: Float
+  min_balance: Float
+  sub_level: String
+}
+
+type CommonTitleDescription {
+  description: String
+  title: String
+}
+
+input CommonTitleDescriptionInputType {
+  description: String
+  title: String
+}
+
+type CompactBestSellingInput {
+  createdAt: DateTime
+  enable: Boolean
+  id: ID
+  title: String
+  updatedAt: DateTime
+}
+
+input CompactBestSellingInputType {
+  enable: Boolean
+  title: String
+}
+
+type CompactDemoAuthorsInput {
+  createdAt: DateTime
+  enable: Boolean
+  id: ID
+  title: String
+  updatedAt: DateTime
+}
+
+input CompactDemoAuthorsInputType {
+  enable: Boolean
+  title: String
+}
+
+type CompactDemoCategoryInput {
+  createdAt: DateTime
+  enable: Boolean
+  id: ID
+  title: String
+  updatedAt: DateTime
+}
+
+input CompactDemoCategoryInputType {
+  enable: Boolean
+  title: String
+}
+
+type CompactDemoHandpickedProductsInput {
+  createdAt: DateTime
+  enable: Boolean
+  enableSlider: Boolean
+  id: ID
+  products: [CompactProductInput!]
+  title: String
+  updatedAt: DateTime
+}
+
+input CompactDemoHandpickedProductsInputType {
+  enable: Boolean
+  enableSlider: Boolean
+  products: [CompactProductInputType!]
+  title: String
+}
+
+type CompactDemoManufacturesInput {
+  createdAt: DateTime
+  enable: Boolean
+  id: ID
+  title: String
+  updatedAt: DateTime
+}
+
+input CompactDemoManufacturesInputType {
+  enable: Boolean
+  title: String
+}
+
+type CompactDemoNewArrivalInput {
+  createdAt: DateTime
+  enable: Boolean
+  id: ID
+  title: String
+  updatedAt: DateTime
+}
+
+input CompactDemoNewArrivalInputType {
+  enable: Boolean
+  title: String
+}
+
+type CompactDemoPopularProductsInput {
+  createdAt: DateTime
+  enable: Boolean
+  id: ID
+  title: String
+  updatedAt: DateTime
+}
+
+input CompactDemoPopularProductsInputType {
+  enable: Boolean
+  title: String
+}
+
+type CompactProductInput {
+  createdAt: DateTime
+  external_product_url: String
+  id: ID
+  image: Attachment
+  is_external: Boolean
+  max_price: Float
+  min_price: Float
+  name: String
+  price: Float
+  product_type: String
+  quantity: Int
+  regular_price: Float
+  sale_price: Float
+  slug: String
+  status: String
+  type: CompactTypeSettingsInput
+  unit: String
+  updatedAt: DateTime
+}
+
+input CompactProductInputType {
+  external_product_url: String
+  image: AttachmentInput
+  is_external: Boolean
+  max_price: Float
+  min_price: Float
+  name: String
+  price: Float
+  product_type: String
+  quantity: Int
+  regular_price: Float
+  sale_price: Float
+  slug: String
+  status: String
+  type: CompactTypeSettingsInputType
+  unit: String
+}
+
+type CompactTypeProductCardInput {
+  createdAt: DateTime
+  id: ID
+  productCard: String
+  updatedAt: DateTime
+}
+
+input CompactTypeProductCardInputType {
+  productCard: String
+}
+
+type CompactTypeSettingsInput {
+  createdAt: DateTime
+  id: ID
+  settings: CompactTypeProductCardInput
+  updatedAt: DateTime
+}
+
+input CompactTypeSettingsInputType {
+  settings: CompactTypeProductCardInputType
+}
+
+input ConnectBelongsTo {
+  connect: ID!
+}
+
+input ConnectProductOrderPivot {
+  order_quantity: Int
+  product_id: ID!
+  subtotal: Float
+  unit_price: Float
+  variation_option_id: ID
+}
+
+input ConnectTypeBelongsTo {
+  connect: ID!
+}
+
+type ContactDetails {
+  contact: String
+  emailAddress: String
+  location: Location
+  socials: [ShopSocials!]
+  website: String
+}
+
+input ContactDetailsInput {
+  contact: String
+  emailAddress: String
+  location: LocationInput
+  socials: [ShopSocialInput!]
+  website: String
+}
+
+input ContactInput {
+  description: String!
+  email: String!
+  name: String!
+  subject: String!
+}
+
+type ContactResponse {
+  message: String!
+  success: Boolean!
+}
+
+type Conversation {
+  createdAt: DateTime
+  id: ID
+  latest_message: Message
+  shop: Shop
+  shop_id: ID!
+  unseen: Boolean!
+  updatedAt: DateTime
+  user: User
+  user_id: ID!
+}
+
+type ConversationPaginator {
+  data: [Conversation!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type Coupon {
+  active_from: String!
+  amount: Float
+  code: String
+  createdAt: DateTime
+  description: String
+  expire_at: String!
+  id: ID
+  image: Attachment
+  is_approve: Boolean
+  is_valid: Boolean
+  language: String
+  message: String
+  minimum_cart_amount: Float
+  orders: [Order!]
+  shop_id: ID
+  sub_total: Float
+  target: Boolean
+  translated_languages: [String!]
+  type: String
+  updatedAt: DateTime
+  user_id: ID
+}
+
+input CouponInputType {
+  active_from: String!
+  amount: Float
+  code: String
+  description: String
+  expire_at: String!
+  image: AttachmentInput
+  is_approve: Boolean
+  is_valid: Boolean
+  language: String
+  message: String
+  minimum_cart_amount: Float
+  orders: [OrderInputType!]
+  shop_id: ID
+  sub_total: Float
+  target: Boolean
+  translated_languages: [String!]
+  type: String
+  user_id: ID
+}
+
+type CouponPaginator {
+  data: [Coupon!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+input CreateAbusiveReportInput {
+  message: String!
+  model_id: ID
+  model_type: String!
+  user_id: Float
+}
+
+input CreateAddressInput {
+  address: UserAddressInputType
+  customer: UserInputType
+  default: Boolean
+  title: String
+  type: AddressType
+}
+
+input CreateAttributeInput {
+  language: String
+  name: String!
+  shop_id: String!
+  values: [AttributeValueInput!]!
+}
+
+input CreateAuthorInput {
+  bio: String
+  born: String
+  cover_image: AttachmentInput
+  death: String
+  image: AttachmentInput
+  is_approved: Boolean
+  language: String
+  languages: String
+  name: String!
+  products_count: Int
+  quote: String
+  shop_id: ID
+  slug: String
+  socials: [ShopSocialInput!]
+}
+
+input CreateCategoryInput {
+  details: String
+  icon: String
+  image: AttachmentInput
+  language: String
+  name: String!
+  parent: ID
+  slug: String!
+  type: ConnectTypeBelongsTo
+  type_id: ID
+}
+
+input CreateConversationInput {
+  shop_id: ID!
+}
+
+input CreateCouponInput {
+  active_from: String!
+  amount: Float
+  code: String
+  description: String
+  expire_at: String!
+  image: AttachmentInput
+  is_approve: Boolean
+  language: String
+  minimum_cart_amount: Float
+  shop_id: ID
+  target: Boolean
+  type: String
+  user_id: ID
+}
+
+input CreateFaqInput {
+  faq_description: String
+  faq_title: String
+  faq_type: String
+  issued_by: String
+  language: String
+  shop_id: ID
+  slug: String
+  user_id: ID
+}
+
+input CreateFeedbackInput {
+  model_id: ID!
+  model_type: String!
+  negative: Boolean
+  positive: Boolean
+}
+
+input CreateFlashSaleInput {
+  cover_image: AttachmentInput
+  description: String
+  end_date: String
+  image: AttachmentInput
+  language: String
+  rate: Float
+  sale_builder: SaleBuilderInput
+  sale_status: Boolean
+  slug: String
+  start_date: String
+  title: String
+  type: String
+}
+
+input CreateFlashSaleRequestInput {
+  flash_sale_id: ID
+  language: String
+  note: String
+  requested_product_ids: [ID!]
+  title: String
+}
+
+input CreateManufacturerInput {
+  cover_image: AttachmentInput
+  description: String
+  image: AttachmentInput
+  is_approved: Boolean
+  language: String
+  name: String!
+  products_count: Int
+  shop_id: ID
+  slug: String
+  socials: [ShopSocialInput!]
+  type_id: ID
+  website: String
+}
+
+input CreateMessageInput {
+  conversation_id: ID!
+  message: String!
+}
+
+input CreateOrderInput {
+  amount: Float!
+  billing_address: UserAddressInput!
+  card: CardInput
+  coupon_id: ID
+  customer_contact: String!
+  customer_id: ID
+  customer_name: String
+  delivery_fee: Float
+  delivery_time: String!
+  discount: Float
+  isFullWalletPayment: Boolean
+  language: String
+  note: String
+  order_status: String
+  paid_total: Float!
+  payment_gateway: PaymentGatewayType!
+  payment_sub_gateway: String
+  products: [ConnectProductOrderPivot!]!
+  sales_tax: Float!
+  shipping_address: UserAddressInput!
+  shop_id: ID
+  total: Float!
+  use_wallet_points: Boolean
+}
+
+input CreateOrderPaymentInput {
+  payment_gateway: String!
+  tracking_number: String!
+}
+
+input CreateOrderStatusInput {
+  color: String!
+  language: String!
+  name: String!
+  serial: Int!
+}
+
+input CreateProductInput {
+  author: AuthorInputType
+  author_id: ID
+  categories: [ID!]
+  description: String
+  external_product_button_text: String
+  external_product_url: String
+  gallery: [AttachmentInput!]
+  height: String
+  image: AttachmentInput
+  in_flash_sale: Int
+  in_stock: Boolean
+  is_digital: Boolean
+  is_external: Boolean
+  is_taxable: Boolean
+  language: String
+  length: String
+  manufacturer: ManufacturerInputType
+  manufacturer_id: ID
+  max_price: Float
+  min_price: Float
+  my_review: [ReviewInputType!]
+  name: String!
+  price: Float
+  product_type: ProductType!
+  quantity: Int!
+  sale_price: Float
+  shop_id: ID
+  sku: String
+  sold_quantity: Int
+  status: ProductStatus!
+  tags: [ID!]
+  type_id: ID!
+  unit: String!
+  variation_options: UpsertVariationsHasMany
+  variations: [AttributeValueInputType!]
+  video: [VideoInputType!]
+  width: String
+}
+
+input CreateQuestionInput {
+  answer: String
+  feedbacks: [FeedbackInputType!]
+  my_feedback: FeedbackInputType
+  negative_feedbacks_count: Float
+  positive_feedbacks_count: Float
+  product_id: ID
+  question: String
+  shop_id: ID
+  user_id: Float
+}
+
+input CreateRefundInput {
+  description: String!
+  images: [AttachmentInput!]
+  order_id: ID!
+  title: String!
+}
+
+input CreateRefundPolicyInput {
+  description: String
+  language: String
+  shop_id: ID
+  slug: String
+  status: String
+  target: String
+  title: String
+}
+
+input CreateRefundReasonInput {
+  language: String
+  name: String
+  slug: String
+}
+
+input CreateReviewInput {
+  comment: String!
+  order_id: String!
+  photos: [AttachmentInput!]
+  product_id: String!
+  rating: Float!
+  shop_id: String!
+  variation_option_id: ID
+}
+
+input CreateShippingInput {
+  amount: Float!
+  is_global: Boolean! = true
+  name: String!
+  type: ShippingType!
+}
+
+input CreateShopInput {
+  address: UserAddressInputType
+  balance: BalanceInput
+  categories: [ID!]
+  cover_image: AttachmentInput
+  description: String
+  logo: AttachmentInput
+  name: String
+  settings: ShopSettingsInputType
+  slug: String
+}
+
+input CreateShopMaintenanceEventInput {
+  isMaintenance: Boolean
+  isShopUnderMaintenance: Boolean
+  shop_id: ID
+}
+
+input CreateStoreNoticeInput {
+  description: String
+  effective_from: String
+  expired_at: String!
+  notice: String!
+  priority: String!
+  received_by: [Float!]
+  type: String!
+}
+
+input CreateTagInput {
+  details: String
+  icon: String
+  image: AttachmentInput
+  language: String
+  name: String!
+  slug: String!
+  type: ConnectTypeBelongsTo
+  type_id: ID
+}
+
+input CreateTaxInput {
+  city: String
+  country: String
+  is_global: Boolean! = true
+  name: String!
+  on_shipping: Boolean
+  priority: Int
+  rate: Float!
+  state: String
+  zip: String
+}
+
+input CreateTermsConditionsInput {
+  description: String
+  issued_by: String
+  language: String
+  shop_id: ID
+  slug: String
+  title: String!
+  type: String
+  user_id: ID
+}
+
+input CreateTypeInput {
+  banners: [BannerInputType!]
+  icon: String
+  language: String
+  name: String
+  promotional_sliders: [AttachmentInput!]
+  settings: TypeSettingsInput
+}
+
+input CreateWishlistInput {
+  product_id: ID!
+}
+
+input CreateWithdrawInput {
+  amount: Float!
+  details: String!
+  note: String!
+  payment_method: String!
+  shop_id: ID!
+}
+
+type CurrencyOptions {
+  formation: String!
+  fractions: Float!
+}
+
+input CurrencyOptionsInputType {
+  formation: String!
+  fractions: Float!
+}
+
+type Customer {
+  email: String!
+  id: String!
+  name: String!
+}
+
+input CustomerInputType {
+  email: String!
+  id: String!
+  name: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type DeliveryTime {
+  description: String!
+  title: String!
+}
+
+input DeliveryTimeInputType {
+  description: String!
+  title: String!
+}
+
+type DigitalFile {
+  attachment_id: Int!
+  createdAt: DateTime
+  fileable: FileableUnion
+  id: ID
+  updatedAt: DateTime
+  url: String!
+}
+
+type EventSettings {
+  admin: SettingAdmin
+  customer: SettingCustomer
+  vendor: SettingVendor
+}
+
+input EventSettingsInputType {
+  admin: SettingAdminInputType
+  customer: SettingCustomerInputType
+  vendor: SettingVendorInputType
+}
+
+type FacebookSettings {
+  appId: String
+  isEnable: Boolean
+  pageId: String
+}
+
+input FacebookSettingsInputType {
+  appId: String
+  isEnable: Boolean
+  pageId: String
+}
+
+type FaqPaginator {
+  data: [Faqs!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type Faqs {
+  createdAt: DateTime
+  faq_description: String
+  faq_title: String
+  faq_type: String
+  id: ID
+  issued_by: String
+  language: String
+  shop: Shop
+  shop_id: ID
+  slug: String
+  translated_languages: [String!]
+  updatedAt: DateTime
+  user_id: ID
+}
+
+type Feedback {
+  createdAt: DateTime
+  id: ID
+  model_id: ID!
+  model_type: String!
+  negative: Boolean
+  positive: Boolean
+  updatedAt: DateTime
+  user_id: String!
+}
+
+input FeedbackInputType {
+  model_id: ID!
+  model_type: String!
+  negative: Boolean
+  positive: Boolean
+  user_id: String!
+}
+
+union FileableUnion = Product | Variation
+
+type FlashSale {
+  cover_image: Attachment
+  createdAt: DateTime
+  description: String
+  end_date: String
+  id: ID
+  image: Attachment
+  language: String
+  products: [Product!]
+  rate: Float
+  sale_builder: SaleBuilder
+  sale_status: Boolean
+  slug: String
+  start_date: String
+  title: String
+  translated_languages: [String!]
+  type: String
+  updatedAt: DateTime
+}
+
+type FlashSalePaginator {
+  data: [FlashSale!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type FlashSaleRequestPaginator {
+  data: [FlashSaleRequests!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type FlashSaleRequests {
+  createdAt: DateTime
+  deleted_at: String
+  flash_sale: FlashSale
+  flash_sale_id: ID
+  id: ID
+  language: String
+  note: String
+  request_status: Boolean
+  title: String
+  updatedAt: DateTime
+}
+
+input ForgetPasswordInput {
+  email: String!
+}
+
+input GenerateDownloadableUrlInput {
+  digital_file_id: ID
+}
+
+input GenerateInvoiceDownloadUrlInput {
+  is_rtl: Boolean
+  language: String
+  order_id: ID!
+  translated_languages: InvoiceTranslatedLanguages
+}
+
+input GenerateOrderExportUrlInput {
+  shop_id: ID
+}
+
+type GoogleMapLocation {
+  city: String
+  country: String
+  formattedAddress: String
+  lat: Float
+  lng: Float
+  route: String
+  state: String
+  street_address: String
+  street_number: String
+  zip: String
+}
+
+input GoogleMapLocationInput {
+  city: String
+  country: String
+  formattedAddress: String
+  lat: Float
+  lng: Float
+  route: String
+  state: String
+  street_address: String
+  street_number: String
+  zip: String
+}
+
+type GoogleSettings {
+  isEnable: Boolean
+  tagManagerId: String
+}
+
+input GoogleSettingsInputType {
+  isEnable: Boolean
+  tagManagerId: String
+}
+
+type GuidelineItems {
+  link: String
+  title: String
+}
+
+input GuidelineItemsInputType {
+  link: String
+  title: String
+}
+
+type IconValue {
+  value: String
+}
+
+input IconValueInputType {
+  value: String
+}
+
+input InvoiceTranslatedLanguages {
+  amount_due: String
+  date: String
+  delivery_fee: String
+  discount: String
+  invoice_no: String
+  paid_from_wallet: String
+  products: String
+  quantity: String
+  subtotal: String
+  tax: String
+  total: String
+}
+
+type Location {
+  city: String
+  country: String
+  formattedAddress: String
+  lat: Float
+  lng: Float
+  state: String
+  street_address: String
+  zip: String
+}
+
+input LocationInput {
+  city: String
+  country: String
+  formattedAddress: String
+  lat: Float
+  lng: Float
+  state: String
+  street_address: String
+  zip: String
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type Maintenance {
+  aboutUsDescription: String
+  aboutUsTitle: String
+  buttonTitleOne: String
+  buttonTitleTwo: String
+  contactUsTitle: String
+  description: String
+  image: Attachment
+  isOverlayColor: Boolean
+  newsLetterDescription: String
+  newsLetterTitle: String
+  overlayColor: String
+  overlayColorRange: String
+  start: String
+  title: String
+  until: String
+}
+
+input MaintenanceInput {
+  aboutUsDescription: String
+  aboutUsTitle: String
+  buttonTitleOne: String
+  buttonTitleTwo: String
+  contactUsTitle: String
+  description: String
+  image: AttachmentInput
+  isOverlayColor: Boolean
+  newsLetterDescription: String
+  newsLetterTitle: String
+  overlayColor: String
+  overlayColorRange: String
+  start: String
+  title: String
+  until: String
+}
+
+input MakeOrRevokeAdminInput {
+  user_id: ID!
+}
+
+type Manufacturer {
+  cover_image: Attachment
+  createdAt: DateTime
+  description: String
+  id: ID
+  image: Attachment
+  is_approved: Boolean
+  language: String
+  name: String!
+  products_count: Int
+  slug: String
+  socials: [ShopSocials!]
+  translated_languages: [String!]
+  type: Type!
+  type_id: ID
+  updatedAt: DateTime
+  website: String
+}
+
+input ManufacturerInputType {
+  cover_image: AttachmentInput
+  description: String
+  image: AttachmentInput
+  is_approved: Boolean
+  language: String
+  name: String!
+  products_count: Int
+  slug: String
+  socials: [ShopSocialInput!]
+  translated_languages: [String!]
+  type: TypeInputType!
+  type_id: ID
+  website: String
+}
+
+type ManufacturerPaginator {
+  data: [Manufacturer!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type Message {
+  body: String
+  conversation: Conversation
+  conversation_id: ID!
+  createdAt: DateTime
+  id: ID
+  updatedAt: DateTime
+  user: User
+  user_id: ID!
+}
+
+type MessagePaginator {
+  data: [Message!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type Mutation {
+  activeUser(id: ID!): User!
+  addNewCard(input: AddNewCardInput!): Card!
+  addPoints(input: AddPointsInput!): Boolean!
+  addStaff(input: AddStaffInput!): Boolean!
+  approveCoupon(id: ID!): Coupon!
+  approveFlashSaleRequest(id: ID!): FlashSaleRequests!
+  approveShop(input: ApproveShopInput!): Shop!
+  approveTermsConditions(id: ID!): TermsAndConditions!
+  approveWithdraw(input: ApproveWithdrawInput!): Withdraw!
+  banUser(id: ID!): User!
+  changePassword(input: ChangePasswordInput!): PasswordChangeResponse!
+  contactUs(input: ContactInput): ContactResponse!
+  createAbusiveReport(input: CreateAbusiveReportInput!): AbusiveReport!
+  createAddress(input: CreateAddressInput!): Address!
+  createAttribute(input: CreateAttributeInput!): Attribute!
+  createAuthor(input: CreateAuthorInput!): Author!
+  createCategory(input: CreateCategoryInput!): Category!
+  createConversation(input: CreateConversationInput!): Conversation!
+  createCoupon(input: CreateCouponInput!): Coupon!
+  createFaq(input: CreateFaqInput!): Faqs!
+  createFeedback(input: CreateFeedbackInput!): Feedback!
+  createFlashSale(input: CreateFlashSaleInput!): FlashSale!
+  createFlashSaleRequest(input: CreateFlashSaleRequestInput!): FlashSaleRequests!
+  createManufacturer(input: CreateManufacturerInput!): Manufacturer!
+  createMessage(input: CreateMessageInput!): Message!
+  createOrder(input: CreateOrderInput!): Order!
+  createOrderPayment(input: CreateOrderPaymentInput!): Boolean!
+  createOrderStatus(input: CreateOrderStatusInput!): OrderStatus!
+  createProduct(input: CreateProductInput!): Product!
+  createProfile(input: ProfileInput!): Profile!
+  createQuestion(input: CreateQuestionInput!): Question!
+  createRefund(input: CreateRefundInput!): Refund!
+  createRefundPolicy(input: CreateRefundPolicyInput!): RefundPolicy!
+  createRefundReason(input: CreateRefundReasonInput!): RefundReason!
+  createReview(input: CreateReviewInput!): Review!
+  createShipping(input: CreateShippingInput!): Shipping!
+  createShop(input: CreateShopInput!): Shop!
+  createShopMaintenanceEvent(input: CreateShopMaintenanceEventInput!): Shop!
+  createStoreNotice(input: CreateStoreNoticeInput!): StoreNotice!
+  createTag(input: CreateTagInput!): Tag!
+  createTax(input: CreateTaxInput!): Tax!
+  createTermsConditions(input: CreateTermsConditionsInput!): TermsAndConditions!
+  createType(input: CreateTypeInput!): Type!
+  createWithdraw(input: CreateWithdrawInput!): Withdraw!
+  deleteAddress(id: ID!): Address!
+  deleteAttribute(id: ID!): Attribute!
+  deleteAuthor(id: ID!): Author!
+  deleteCard(id: ID!): Boolean!
+  deleteCategory(id: ID!): Category!
+  deleteCoupon(id: ID!): Coupon!
+  deleteFaq(id: ID!): Faqs!
+  deleteFlashSale(id: ID!): FlashSale!
+  deleteFlashSaleRequest(id: ID!): FlashSaleRequests!
+  deleteManufacturer(id: ID!): Manufacturer!
+  deleteNotifyLog(id: ID!): NotifyLogs!
+  deleteOrder(id: ID!): Order!
+  deleteOrderStatus(id: ID!): OrderStatus!
+  deleteOwnershipTransfer(id: ID!): OwnershipTransfer!
+  deleteProduct(id: ID!): Product!
+  deleteProfile(id: ID!): Profile!
+  deleteQuestion(id: ID!): Question!
+  deleteRefund(id: ID!): Refund!
+  deleteRefundPolicy(id: ID!): RefundPolicy!
+  deleteRefundReason(id: ID!): RefundReason!
+  deleteReview(id: ID!): Review!
+  deleteShipping(id: ID!): Shipping!
+  deleteShop(id: ID!): Shop!
+  deleteStoreNotice(id: ID!): StoreNotice!
+  deleteTag(id: ID!): Tag!
+  deleteTax(id: ID!): Tax!
+  deleteTermsConditions(id: ID!): TermsAndConditions!
+  deleteType(id: ID!): Type!
+  deleteWishlist(slug: String!): Boolean!
+  deleteWithdraw(id: ID!): Withdraw!
+  disApproveFlashSaleRequest(id: ID!): FlashSaleRequests!
+  disApproveTermsConditions(id: ID!): TermsAndConditions!
+  disapproveCoupon(id: ID!): Coupon!
+  disapproveShop(id: ID!): Shop!
+  forgetPassword(input: ForgetPasswordInput!): PasswordChangeResponse!
+  generateDescriptions(input: AiInput!): Ai!
+  generateDownloadableUrl(input: GenerateDownloadableUrlInput!): String!
+  generateInvoiceDownloadUrl(input: GenerateInvoiceDownloadUrlInput!): String!
+  generateOrderExportUrl(input: GenerateOrderExportUrlInput!): String!
+  licenseKeyValidation(license_key: String!): Boolean!
+  login(input: LoginInput!): AuthResponse!
+  logout: Boolean!
+  makeOrRevokeAdmin(input: MakeOrRevokeAdminInput!): Boolean!
+  notifyLogAllRead(input: UpdateNotifyLogInput!): [NotifyLogs!]!
+  otpLogin(input: OtpLoginInput!): AuthResponse!
+  readAllNotice(input: ReadAllNoticeInput!): StoreNoticeUserPivot!
+  readNotice(input: ReadSingleNoticeInput!): StoreNoticeUserPivot!
+  readNotifyLogs(id: ID!): NotifyLogs!
+  refreshToken: RefreshTokenResponse!
+  registerUser(input: RegisterUserInput!): RegisterUserOutput!
+  rejectAbusiveReport(input: AcceptAbusiveReportInput!): AbusiveReport!
+  removeStaff(id: ID!): User!
+  removeUser(id: ID!): User!
+  resendVerificationEmail: SuccessResponse!
+  resetPassword(input: ResetPasswordInput!): PasswordChangeResponse!
+  savePaymentMethod(input: SavePaymentMethodInput!): Card!
+  seenMessage(input: SeenMessageInput!): Boolean!
+  sendOtpCode(input: OtpInput!): OtpResponse!
+  setDefaultPaymentMethod(method_id: ID!): Card!
+  socialLogin(input: SocialLoginInput!): AuthResponse!
+  subscribeToNewsletter(email: String!): Boolean!
+  toggleWishlist(input: CreateWishlistInput!): Boolean!
+  transferShopOwnership(input: TransferShopOwnershipInput!): Shop!
+  updateAddress(input: UpdateAddressInput!): Address!
+  updateAttribute(input: UpdateAttributeInput!): Attribute!
+  updateAuthor(input: UpdateAuthorInput!): Author!
+  updateBecameSeller(input: BecomeSellerWithCommissionInput!): BecomeSellerWithCommission!
+  updateCard(input: UpdateCardInput!): Card!
+  updateCategory(input: UpdateCategoryInput!): Category!
+  updateCoupon(input: UpdateCouponInput!): Coupon!
+  updateFaq(input: UpdateFaqInput!): Faqs!
+  updateFlashSale(input: UpdateFlashSaleInput!): FlashSale!
+  updateFlashSaleRequest(input: UpdateFlashSaleRequestInput!): FlashSaleRequests!
+  updateManufacturer(input: UpdateManufacturerInput!): Manufacturer!
+  updateOrder(input: UpdateOrderInput!): Order!
+  updateOrderStatus(input: UpdateOrderStatusInput!): OrderStatus!
+  updateOwnershipTransfer(input: UpdateOwnershipTransferInput!): OwnershipTransfer!
+  updateProduct(input: UpdateProductInput!): Product!
+  updateProfile(id: ID!, input: ProfileInput!): Profile!
+  updateQuestion(id: ID!, input: UpdateQuestionInput!): Question!
+  updateRefund(input: UpdateRefundInput!): Refund!
+  updateRefundPolicy(input: UpdateRefundPolicyInput!): RefundPolicy!
+  updateRefundReason(input: UpdateRefundReasonInput!): RefundReason!
+  updateReview(id: ID!, input: UpdateReviewInput!): Review!
+  updateSettings(input: SettingsInput!): Settings!
+  updateShipping(input: UpdateShippingInput!): Shipping!
+  updateShop(input: UpdateShopInput!): Shop!
+  updateStoreNotice(input: UpdateStoreNoticeInput!): StoreNotice!
+  updateTag(input: UpdateTagInput!): Tag!
+  updateTax(input: UpdateTaxInput!): Tax!
+  updateTermsConditions(input: UpdateTermsConditionsInput!): TermsAndConditions!
+  updateType(input: UpdateTypeInput!): Type!
+  updateUser(input: UpdateUserInput!): User!
+  updateUserEmail(input: UpdateEmailUserInput!): SuccessResponse!
+  upload(attachment: [AttachmentInput!]!): [Attachment!]!
+  verifyCheckout(input: CheckoutVerificationInput!): VerifiedCheckoutData!
+  verifyCoupon(input: VerifyCouponInput!): VerifyCouponResponse!
+  verifyForgetPasswordToken(input: VerifyForgetPasswordTokenInput!): PasswordChangeResponse!
+  verifyOtpCode(input: VerifyOtpInput!): SuccessResponse!
+}
+
+type MyQuestionPaginator {
+  data: [Question!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type MyReportPaginator {
+  data: [AbusiveReport!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type Notifications {
+  email: String
+  enable: Boolean
+}
+
+input NotificationsInputType {
+  email: String
+  enable: Boolean
+}
+
+type NotifyLogs {
+  createdAt: DateTime
+  deleted_at: String!
+  id: ID
+  is_read: Boolean
+  notify_receiver_type: String
+  notify_text: String!
+  notify_tracker: String!
+  notify_type: String
+  receiver: ID
+  receiver_user: User
+  sender: ID
+  sender_user: User
+  updatedAt: DateTime
+}
+
+type NotifyLogsPaginator {
+  data: [NotifyLogs!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type Order {
+  altered_payment_gateway: String
+  amount: Float!
+  billing_address: UserAddress
+  children: [Order!]!
+  coupon: Coupon
+  createdAt: DateTime
+  customer: Customer!
+  customer_contact: String!
+  customer_id: ID
+  customer_name: String
+  delivery_fee: Float!
+  delivery_time: String
+  discount: Float
+  id: ID
+  language: String!
+  note: String
+  order_status: String
+  paid_total: Float
+  parent_id: Float
+  parent_order: Order
+  payment_gateway: PaymentGatewayType!
+  payment_id: String
+  payment_intent: PaymentIntent
+  payment_status: String
+  products: [Product!]!
+  refund: Refund
+  reviews: [Review!]
+  sales_tax: Float!
+  shipping_address: UserAddress
+  shop: Shop
+  total: Float!
+  tracking_number: String!
+  translated_languages: [String!]!
+  updatedAt: DateTime
+  wallet_point: WalletPoint
+}
+
+type OrderByStatus {
+  cancelled: Float
+  complete: Float
+  failed: Float
+  localFacility: Float
+  outForDelivery: Float
+  pending: Float
+  processing: Float
+  refunded: Float
+}
+
+type OrderFiles {
+  createdAt: DateTime
+  customer_id: Int
+  digital_file: DigitalFile
+  digital_file_id: Int
+  file: DigitalFile
+  id: ID
+  order: Order
+  purchase_key: String
+  tracking_number: String
+  updatedAt: DateTime
+}
+
+input OrderInputType {
+  altered_payment_gateway: String
+  amount: Float! = 0
+  billing_address: UserAddressInputType
+  children: [OrderInputType!]!
+  coupon: CouponInputType
+  customer: CustomerInputType!
+  customer_contact: String!
+  customer_id: ID
+  customer_name: String
+  delivery_fee: Float!
+  delivery_time: String
+  discount: Float
+  language: String!
+  note: String
+  order_status: String
+  paid_total: Float
+  parent_id: Float
+  parent_order: OrderInputType
+  payment_gateway: PaymentGatewayType!
+  payment_id: String
+  payment_intent: PaymentIntentType
+  payment_status: String
+  products: [ProductInputType!]!
+  refund: RefundInputType
+  reviews: [ReviewInputType!]
+  sales_tax: Float!
+  shipping_address: UserAddressInputType
+  shop: ShopInputType
+  total: Float!
+  tracking_number: String!
+  translated_languages: [String!]!
+  wallet_point: WalletPointInputType
+}
+
+type OrderPaginator {
+  data: [Order!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type OrderProductPivot {
+  order_quantity: Int!
+  subtotal: Float!
+  unit_price: Float!
+  variation_option_id: ID
+}
+
+type OrderStatus {
+  color: String!
+  createdAt: DateTime
+  id: ID
+  language: String!
+  name: String!
+  serial: Int!
+  slug: String!
+  translated_languages: [String!]!
+  updatedAt: DateTime
+}
+
+type OrderStatusPaginator {
+  data: [OrderStatus!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type OrderedFilePaginator {
+  data: [OrderFiles!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+input OtpInput {
+  phone_number: String!
+}
+
+input OtpLoginInput {
+  code: String!
+  email: String!
+  name: String!
+  otp_id: String!
+  phone_number: String!
+}
+
+type OtpResponse {
+  id: String!
+  is_contact_exist: Boolean!
+  message: String!
+  phone_number: String!
+  provider: String!
+  success: Boolean!
+}
+
+enum OwnerShipTransferStatus {
+  APPROVED
+  PENDING
+  PROCESSING
+  REJECTED
+}
+
+type OwnershipTransfer {
+  address: UserAddress
+  balance_info: Balance
+  cover_image: Attachment
+  createdAt: DateTime
+  current_owner: User
+  description: String
+  id: ID
+  language: String
+  message: String
+  name: String
+  order_info: TodayTotalOrderByStatus
+  previous_owner: User
+  refund_info: [Refund!]
+  settings: ShopSettings
+  shop: Shop
+  status: String
+  transaction_identifier: String
+  updatedAt: DateTime
+  withdrawal_info: [Withdraw!]
+}
+
+type OwnershipTransferPaginator {
+  data: [OwnershipTransfer!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type PaginatorInfo {
+  count: Int!
+  currentPage: Int!
+  firstItem: Int!
+  hasMorePages: Boolean!
+  lastItem: Int!
+  lastPage: Int!
+  perPage: Int!
+  total: Int!
+}
+
+type PasswordChangeResponse {
+  message: String!
+  success: Boolean!
+}
+
+type PaymentGateWay {
+  createdAt: DateTime
+  customer_id: String!
+  gateway_name: String!
+  id: ID
+  updatedAt: DateTime
+  user_id: Float!
+}
+
+type PaymentGateway {
+  name: String!
+  title: String!
+}
+
+input PaymentGatewayInputType {
+  name: String!
+  title: String!
+}
+
+enum PaymentGatewayType {
+  CASH
+  CASH_ON_DELIVERY
+  FULL_WALLET_PAYMENT
+  PAYPAL
+  RAZORPAY
+  STRIPE
+}
+
+type PaymentInfo {
+  account: Float
+  bank: String
+  email: String
+  name: String
+}
+
+input PaymentInfoInput {
+  account: Float
+  bank: String
+  email: String
+  name: String
+}
+
+type PaymentIntent {
+  id: ID!
+  order_id: ID!
+  payment_gateway: String!
+  payment_intent_info: PaymentIntentInfo
+  tracking_number: ID!
+}
+
+type PaymentIntentInfo {
+  amount: String!
+  client_secret: String
+  currency: String!
+  is_redirect: Boolean!
+  payment_id: String!
+  redirect_url: String
+}
+
+input PaymentIntentInfoType {
+  amount: String!
+  client_secret: String
+  currency: String!
+  is_redirect: Boolean!
+  payment_id: String!
+  redirect_url: String
+}
+
+input PaymentIntentType {
+  id: ID!
+  order_id: ID!
+  payment_gateway: String!
+  payment_intent_info: PaymentIntentInfoType
+  tracking_number: ID!
+}
+
+input PivotInputType {
+  order_quantity: Int!
+  subtotal: Float!
+  unit_price: Float!
+  variation_option_id: ID
+}
+
+type PopUpNotShow {
+  popUpExpiredIn: Float
+  title: String
+}
+
+input PopUpNotShowInput {
+  popUpExpiredIn: Float
+  title: String
+}
+
+input PriceRange {
+  from: Float!
+  to: Float!
+}
+
+type Product {
+  author: Author
+  author_id: ID
+  categories: [Category!]
+  createdAt: DateTime
+  description: String
+  digital_file: DigitalFile
+  external_product_button_text: String
+  external_product_url: String
+  gallery: [Attachment!]
+  height: String
+  id: ID
+  image: Attachment
+  in_flash_sale: Int
+  in_stock: Boolean
+  in_wishlist: Boolean!
+  is_digital: Boolean
+  is_external: Boolean
+  is_taxable: Boolean
+  language: String
+  length: String
+  manufacturer: Manufacturer
+  manufacturer_id: ID
+  max_price: Float
+  min_price: Float
+  my_review: [Review!]
+  name: String!
+  orders: [Order!]
+  pivot: OrderProductPivot
+  price: Float
+  product_type: ProductType!
+  quantity: Int!
+  ratings: Float
+  related_products(limit: Int): [Product!]
+  sale_price: Float
+  shop: Shop
+  shop_id: ID
+  sku: String
+  slug: String!
+  sold_quantity: Int
+  status: ProductStatus!
+  tags: [Tag!]
+  translated_languages: [String!]
+  type: Type
+  type_id: ID!
+  unit: String!
+  updatedAt: DateTime
+  variation_options: [Variation!]
+  variations: [AttributeValue!]
+  video: [Video!]
+  width: String
+}
+
+input ProductInputType {
+  author: AuthorInputType
+  author_id: ID
+  categories: [CategoryInputType!]
+  description: String
+  external_product_button_text: String
+  external_product_url: String
+  gallery: [AttachmentInput!]
+  height: String
+  image: AttachmentInput
+  in_flash_sale: Int
+  in_stock: Boolean
+  in_wishlist: Boolean!
+  is_digital: Boolean
+  is_external: Boolean
+  is_taxable: Boolean
+  language: String
+  length: String
+  manufacturer: ManufacturerInputType
+  manufacturer_id: ID
+  max_price: Float
+  min_price: Float
+  my_review: [ReviewInputType!]
+  name: String!
+  orders: [OrderInputType!]
+  pivot: PivotInputType
+  price: Float
+  product_type: ProductType!
+  quantity: Int!
+  ratings: Float
+  related_products: [ProductInputType!]
+  sale_price: Float
+  shop: ShopInputType
+  shop_id: ID
+  sku: String
+  slug: String!
+  sold_quantity: Int
+  status: ProductStatus!
+  tags: [TagInputType!]
+  translated_languages: [String!]
+  type: TypeInputType
+  type_id: ID!
+  unit: String!
+  variation_options: [VariationInputType!]
+  variations: [AttributeValueInputType!]
+  video: [VideoInputType!]
+  width: String
+}
+
+type ProductPaginator {
+  data: [Product!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+enum ProductStatus {
+  DRAFT
+  PUBLISH
+}
+
+enum ProductType {
+  SIMPLE
+  VARIABLE
+}
+
+type Profile {
+  avatar: Attachment
+  bio: String
+  contact: String
+  notifications: Notifications
+  socials: [Social!]
+}
+
+input ProfileHasOne {
+  upsert: UserProfileInput
+}
+
+input ProfileInput {
+  avatar: AttachmentInput
+  bio: String
+  contact: String
+  customer: ConnectBelongsTo!
+  socials: [SocialInputType!]
+}
+
+input ProfileInputType {
+  avatar: AttachmentInput
+  bio: String
+  contact: String
+  notifications: NotificationsInputType
+  socials: [SocialInputType!]
+}
+
+type PromoPopup {
+  description: String
+  image: Attachment
+  isPopUpNotShow: Boolean
+  popUpDelay: Float
+  popUpExpiredIn: Float
+  popUpNotShow: PopUpNotShow
+  title: String
+}
+
+input PromoPopupInput {
+  description: String
+  image: AttachmentInput
+  isPopUpNotShow: Boolean
+  popUpDelay: Float
+  popUpExpiredIn: Float
+  popUpNotShow: PopUpNotShowInput
+  title: String
+}
+
+type PushNotification {
+  message: Boolean
+  order: Boolean
+  storeNotice: Boolean
+}
+
+input PushNotificationInput {
+  message: Boolean
+  order: Boolean
+  storeNotice: Boolean
+}
+
+type Query {
+  address(id: Int!): Address!
+  addresses: [Address!]!
+  all_questions(first: Int = 15, orderBy: [QueryQuestionsOrderByOrderByClause!], page: Int = 1, shop_id: ID): QuestionPaginator!
+  analytics: Analytics!
+  attribute(id: ID, language: String, slug: String): Attribute!
+  attributes(language: String, orderBy: [QueryAttributesOrderByOrderByClause!], shop_id: ID): [Attribute!]!
+  author(id: ID, language: String, slug: String): Author!
+  authors(first: Int = 15, is_approved: Boolean, language: String, orderBy: [QueryAuthorsOrderByOrderByClause!], page: Int = 1, text: String): AuthorPaginator!
+  becameSeller(language: String): BecomeSellerWithCommission!
+  bestSellingProducts(limit: Int, range: Int, shop_id: Int, type_id: Int, type_slug: String): [Product!]!
+  cards: [Card!]!
+  categories(first: Int = 15, hasType: QueryCategoriesHasTypeWhereHasConditions, language: String, name: String, orderBy: [QueryCategoriesOrderByOrderByClause!], page: Int = 1, parent: ID = null, text: String): CategoryPaginator!
+  category(id: ID, language: String, slug: String): Category!
+  categoryWiseProduct(language: String, limit: Int, search: String, searchJoin: String): [CategoryWiseProduct!]!
+  categoryWiseProductSale(language: String, limit: Int, search: String, searchJoin: String): [CategoryWiseProductSale!]!
+  conversation(id: ID): Conversation
+  conversations(first: Int = 15, orderBy: String, page: Int = 1, search: String, sortedBy: String): ConversationPaginator!
+  coupon(code: String, id: ID, language: String): Coupon!
+  coupons(first: Int = 15, is_approve: Boolean, language: String, orderBy: String, page: Int = 1, search: String, searchJoin: String, shop_id: ID, sortedBy: String, type: String): CouponPaginator!
+  downloads(first: Int = 15, orderBy: [QueryOrderFilesOrderByOrderByClause!], page: Int = 1): OrderedFilePaginator!
+  faq(id: ID, language: String, slug: String): Faqs
+  faqs(faq_type: String, first: Int = 15, issued_by: String, language: String, orderBy: String, page: Int = 1, search: String, searchJoin: String, shop_id: ID, sortedBy: String, text: String): FaqPaginator!
+  fetchRequestedProducts(first: Int = 15, language: String, page: Int = 1, vendor_request_id: ID): ProductPaginator!
+  findShopDistance(lat: String, lng: String): [Shop!]!
+  flashSale(id: ID, language: String, slug: String): FlashSale!
+  flashSaleInfoByProductID(id: String): FlashSale!
+  flashSaleRequest(id: ID, language: String): FlashSaleRequests!
+  flashSaleRequests(first: Int = 15, language: String, orderBy: String, page: Int = 1, search: String, searchJoin: String, sortedBy: String): FlashSaleRequestPaginator!
+  flashSales(first: Int = 15, hasProducts: String, language: String, orderBy: String, page: Int = 1, request_from: String, search: String, searchJoin: String, sortedBy: String): FlashSalePaginator!
+  getPaymentIntent(payment_gateway: String!, recall_gateway: Boolean!, tracking_number: ID!): PaymentIntent!
+  hello: String!
+  in_wishlist(product_id: ID!): Boolean!
+  lowStockProducts(language: String, limit: Int, search: String, searchJoin: String, shop_id: ID, type_id: ID): [Product!]!
+  manufacturer(id: ID, language: String, slug: String): Manufacturer!
+  manufacturers(first: Int = 15, hasType: QueryManufacturersHasTypeWhereHasConditions, is_approved: Boolean, language: String, orderBy: [QueryManufacturersOrderByOrderByClause!], page: Int = 1, text: String): ManufacturerPaginator!
+  me: User!
+  messages(conversation_id: ID!, first: Int = 15, orderBy: String, page: Int = 1, sortedBy: String): MessagePaginator!
+  myQuestions(first: Int = 15, name: String, orderBy: [QueryMyQuestionsOrderByOrderByClause!], page: Int = 1, shop_id: ID): MyQuestionPaginator!
+  myReports(first: Int = 15, orderBy: [QueryMyReportsOrderByOrderByClause!], page: Int = 1, product_id: ID, rating: Float, shop_id: ID): MyReportPaginator!
+  notifyLog(id: ID, language: String, slug: String): NotifyLogs
+  notifyLogs(first: Int = 15, notify_type: String, orderBy: String, page: Int = 1, receiver: ID, search: String, searchJoin: String, sortedBy: String): NotifyLogsPaginator!
+  order(id: ID, tracking_number: String): Order!
+  orderStatus(language: String, slug: String): OrderStatus!
+  orderStatuses(first: Int = 15, language: String, orderBy: [QueryOrderStatusesOrderByOrderByClause!], page: Int = 1, text: String): OrderStatusPaginator!
+  orders(customer_id: ID, first: Int = 15, orderBy: String, page: Int = 1, shop_id: ID, sortedBy: String, tracking_number: String): OrderPaginator!
+  ownershipTransfer(id: ID, language: String, request_view_type: String, slug: String, transaction_identifier: String): OwnershipTransfer!
+  ownershipTransfers(first: Int = 15, id: ID, language: String, orderBy: String, page: Int = 1, search: String, searchJoin: String, slug: String, sortedBy: String, text: String, type: String): OwnershipTransferPaginator!
+  popularProducts(limit: Int, range: Int, shop_id: Int, type_id: Int, type_slug: String): [Product!]!
+  product(id: ID, language: String, slug: String): Product!
+  products(author: String, date_range: String, first: Int = 15, flash_sale_builder: Boolean, hasAuthor: QueryProductsHasAuthorWhereHasConditions, hasCategories: QueryProductsHasCategoriesWhereHasConditions, hasManufacturer: QueryProductsHasManufacturerWhereHasConditions, hasTags: QueryProductsHasTagsWhereHasConditions, hasType: QueryProductsHasTypeWhereHasConditions, language: String, manufacturer: String, max_price: PriceRange, min_price: PriceRange, orderBy: String, page: Int = 1, price: PriceRange, product_type: String, search: String, searchJoin: String, searchedByUser: String, shop_id: ID, sortedBy: String, status: String, text: String): ProductPaginator!
+  productsByFlashSale(first: Int = 15, page: Int = 1, search: String, slug: String): ProductPaginator!
+  productsDraft(author: String, date_range: String, first: Int = 15, flash_sale_builder: Boolean, hasAuthor: QueryProductsHasAuthorWhereHasConditions, hasCategories: QueryProductsHasCategoriesWhereHasConditions, hasManufacturer: QueryProductsHasManufacturerWhereHasConditions, hasTags: QueryProductsHasTagsWhereHasConditions, hasType: QueryProductsHasTypeWhereHasConditions, language: String, manufacturer: String, max_price: PriceRange, min_price: PriceRange, orderBy: String, page: Int = 1, price: PriceRange, product_type: String, search: String, searchJoin: String, searchedByUser: String, shop_id: ID, sortedBy: String, status: String, text: String): ProductPaginator!
+  productsStock(author: String, date_range: String, first: Int = 15, flash_sale_builder: Boolean, hasAuthor: QueryProductsHasAuthorWhereHasConditions, hasCategories: QueryProductsHasCategoriesWhereHasConditions, hasManufacturer: QueryProductsHasManufacturerWhereHasConditions, hasTags: QueryProductsHasTagsWhereHasConditions, hasType: QueryProductsHasTypeWhereHasConditions, language: String, manufacturer: String, max_price: PriceRange, min_price: PriceRange, orderBy: String, page: Int = 1, price: PriceRange, product_type: String, search: String, searchJoin: String, searchedByUser: String, shop_id: ID, sortedBy: String, status: String, text: String): ProductPaginator!
+  question(id: ID, product_id: ID, slug: String): Question
+  questions(first: Int = 15, orderBy: [QueryQuestionsOrderByOrderByClause!], page: Int = 1, shop_id: ID): QuestionPaginator!
+  refund(id: ID!): Refund!
+  refundPolicies(first: Int = 15, language: String, orderBy: String, page: Int = 1, search: String, searchJoin: String, shop_id: ID, sortedBy: String, text: String): RefundPoliciesPaginator!
+  refundPolicy(id: ID, language: String, slug: String): RefundPolicy!
+  refundReason(id: ID, language: String, slug: String): RefundReason
+  refundReasons(first: Int = 15, language: String, orderBy: String, page: Int = 1, search: String, searchJoin: String, sortedBy: String): RefundReasonsPaginator!
+  refunds(customer_id: Int, first: Int = 15, orderBy: String, order_id: Int, page: Int = 1, search: String, shop_id: Int, sortedBy: String): RefundPaginator!
+  review(id: ID): Review!
+  reviews(first: Int = 15, orderBy: [QueryReviewsOrderByOrderByClause!], page: Int = 1, product_id: ID, rating: Float, shop_id: ID): ReviewPaginator!
+  settings(language: String): Settings!
+  shippingClass(id: ID!): Shipping!
+  shippingClasses(orderBy: [QueryShippingClassesOrderByOrderByClause!], text: String): [Shipping!]!
+  shop(id: ID, slug: String): Shop
+  shops(first: Int = 15, is_active: Boolean, orderBy: String, page: Int = 1, sortedBy: String, text: String): ShopPaginator!
+  storeNotice(id: ID, language: String, notice: String): StoreNotice!
+  storeNoticeReceiver(type: String): [UserToNotify!]!
+  storeNoticeTypes(role: String): String!
+  storeNotices(first: Int = 15, id: ID, language: String, orderBy: String, page: Int = 1, search: String, shop_id: ID, sortedBy: String, text: String): StoreNoticesPaginator!
+  tag(id: ID, language: String, slug: String): Tag
+  tags(first: Int = 15, hasType: QueryTagsHasTypeWhereHasConditions, language: String, name: String, orderBy: [QueryTagsOrderByOrderByClause!], page: Int = 1, text: String): TagPaginator!
+  taxClass(id: ID!): Tax!
+  taxClasses(orderBy: [QueryTaxClassesOrderByOrderByClause!], text: String): [Tax!]!
+  termsCondition(id: ID, language: String, slug: String): TermsAndConditions
+  termsConditions(first: Int = 15, is_approved: Boolean, issued_by: String, language: String, orderBy: String, page: Int = 1, search: String, searchJoin: String, shop_id: ID, sortedBy: String, type: String): TermsAndConditionPaginator!
+  topAuthors(language: String, limit: Int): [Author!]!
+  topManufacturers(language: String, limit: Int): [Manufacturer!]!
+  topRatedProducts(language: String, limit: Int, search: String, searchJoin: String): [TopRatedProduct!]!
+  type(id: ID, language: String, slug: String): Type!
+  types(language: String, orderBy: [QueryTypesOrderByOrderByClause!], text: String): [Type!]!
+  user(id: ID!): User
+  wishlists(first: Int = 15, page: Int = 1): ProductPaginator!
+  withdraw(id: ID!): Withdraw
+  withdraws(first: Int = 15, orderBy: String, page: Int = 1, shop_id: ID, sortedBy: String, status: String): WithdrawPaginator!
+}
+
+enum QueryAllQuestionsOrderByColumn {
+  CREATED_AT
+  ID
+  NAME
+  UPDATED_AT
+}
+
+enum QueryAttributesOrderByColumn {
+  CREATED_AT
+  ID
+  NAME
+  UPDATED_AT
+}
+
+input QueryAttributesOrderByOrderByClause {
+  column: QueryAttributesOrderByColumn!
+  order: SortOrder!
+}
+
+enum QueryAuthorsOrderByColumn {
+  CREATED_AT
+  ID
+  NAME
+  UPDATED_AT
+}
+
+input QueryAuthorsOrderByOrderByClause {
+  column: QueryAuthorsOrderByColumn
+  order: SortOrder
+}
+
+enum QueryCategoriesHasTypeColumn {
+  SLUG
+}
+
+input QueryCategoriesHasTypeWhereHasConditions {
+  AND: [QueryCategoriesHasTypeWhereHasConditions!]
+  HAS: QueryCategoriesHasTypeWhereHasConditionsRelation
+  OR: [QueryCategoriesHasTypeWhereHasConditions!]
+  column: QueryCategoriesHasTypeColumn!
+  operator: SQLOperator! = EQ
+  value: String!
+}
+
+input QueryCategoriesHasTypeWhereHasConditionsRelation {
+  amount: Int! = 1
+  condition: QueryCategoriesHasTypeWhereHasConditions!
+  operator: SQLOperator!
+  relation: String!
+}
+
+enum QueryCategoriesOrderByColumn {
+  CREATED_AT
+  NAME
+  UPDATED_AT
+}
+
+input QueryCategoriesOrderByOrderByClause {
+  column: QueryCategoriesOrderByColumn!
+  order: SortOrder!
+}
+
+enum QueryManufacturersHasTypeColumn {
+  SLUG
+}
+
+input QueryManufacturersHasTypeWhereHasConditions {
+  AND: [QueryManufacturersHasTypeWhereHasConditions!]
+  HAS: QueryManufacturersHasTypeWhereHasConditionsRelation
+  OR: [QueryManufacturersHasTypeWhereHasConditions!]
+  column: QueryManufacturersHasTypeColumn!
+  operator: SQLOperator! = EQ
+  value: String!
+}
+
+input QueryManufacturersHasTypeWhereHasConditionsRelation {
+  amount: Int! = 1
+  condition: QueryManufacturersHasTypeWhereHasConditions!
+  operator: SQLOperator!
+  relation: String!
+}
+
+enum QueryManufacturersOrderByColumn {
+  CREATED_AT
+  NAME
+  UPDATED_AT
+}
+
+input QueryManufacturersOrderByOrderByClause {
+  column: QueryManufacturersOrderByColumn
+  order: SortOrder!
+}
+
+input QueryMyQuestionsOrderByOrderByClause {
+  column: QueryQuestionsOrderByOrderByClause!
+  order: SortOrder!
+}
+
+enum QueryMyReportsOrderByColumn {
+  CREATED_AT
+  NAME
+  UPDATED_AT
+}
+
+input QueryMyReportsOrderByOrderByClause {
+  column: QueryMyReportsOrderByColumn!
+  order: SortOrder!
+}
+
+input QueryOrderFilesOrderByOrderByClause {
+  order: SortOrder!
+}
+
+enum QueryOrderStatusesOrderByColumn {
+  CREATED_AT
+  NAME
+  SERIAL
+  UPDATED_AT
+}
+
+input QueryOrderStatusesOrderByOrderByClause {
+  column: QueryOrderStatusesOrderByColumn
+  order: SortOrder!
+}
+
+enum QueryProductsHasAuthorColumn {
+  SLUG
+}
+
+input QueryProductsHasAuthorWhereHasConditions {
+  AND: [QueryProductsHasAuthorWhereHasConditions!]
+  HAS: QueryProductsHasAuthorWhereHasConditionsRelation
+  OR: [QueryProductsHasAuthorWhereHasConditions!]
+  column: QueryProductsHasAuthorColumn!
+  operator: SQLOperator! = EQ
+  value: [String!]!
+}
+
+input QueryProductsHasAuthorWhereHasConditionsRelation {
+  amount: Int! = 1
+  condition: QueryProductsHasAuthorWhereHasConditions!
+  operator: SQLOperator!
+  relation: String!
+}
+
+enum QueryProductsHasCategoriesColumn {
+  SLUG
+}
+
+input QueryProductsHasCategoriesWhereHasConditions {
+  AND: [QueryProductsHasCategoriesWhereHasConditions!]
+  HAS: QueryProductsHasCategoriesWhereHasConditionsRelation
+  OR: [QueryProductsHasCategoriesWhereHasConditions!]
+  column: QueryProductsHasCategoriesColumn!
+  operator: SQLOperator! = EQ
+  value: [String!]!
+}
+
+input QueryProductsHasCategoriesWhereHasConditionsRelation {
+  amount: Int! = 1
+  condition: QueryProductsHasCategoriesWhereHasConditions!
+  operator: SQLOperator!
+  relation: String!
+}
+
+enum QueryProductsHasManufacturerColumn {
+  SLUG
+}
+
+input QueryProductsHasManufacturerWhereHasConditions {
+  AND: [QueryProductsHasManufacturerWhereHasConditions!]
+  HAS: QueryProductsHasManufacturerWhereHasConditionsRelation
+  OR: [QueryProductsHasManufacturerWhereHasConditions!]
+  column: QueryProductsHasManufacturerColumn!
+  operator: SQLOperator! = EQ
+  value: [String!]!
+}
+
+input QueryProductsHasManufacturerWhereHasConditionsRelation {
+  amount: Int! = 1
+  condition: QueryProductsHasManufacturerWhereHasConditions!
+  operator: SQLOperator!
+  relation: String!
+}
+
+input QueryProductsHasTagsWhereHasConditions {
+  AND: [QueryProductsHasTagsWhereHasConditions!]
+  HAS: QueryProductsHasTagsWhereHasConditionsRelation
+  OR: [QueryProductsHasTagsWhereHasConditions!]
+  column: String!
+  operator: SQLOperator! = EQ
+  value: [String!]!
+}
+
+input QueryProductsHasTagsWhereHasConditionsRelation {
+  amount: Int! = 1
+  condition: QueryProductsHasTagsWhereHasConditions!
+  operator: SQLOperator!
+  relation: String!
+}
+
+enum QueryProductsHasTypeColumn {
+  SLUG
+}
+
+input QueryProductsHasTypeWhereHasConditions {
+  AND: [QueryProductsHasTypeWhereHasConditions!]
+  HAS: QueryProductsHasTypeWhereHasConditionsRelation
+  OR: [QueryProductsHasTypeWhereHasConditions!]
+  column: QueryProductsHasTypeColumn!
+  operator: SQLOperator! = EQ
+  value: String!
+}
+
+input QueryProductsHasTypeWhereHasConditionsRelation {
+  amount: Int! = 1
+  condition: QueryProductsHasTypeWhereHasConditions!
+  operator: SQLOperator!
+  relation: String!
+}
+
+input QueryQuestionsOrderByOrderByClause {
+  column: QueryAllQuestionsOrderByColumn!
+  order: SortOrder!
+}
+
+enum QueryReviewsOrderByColumn {
+  CREATED_AT
+  NAME
+  RATING
+  UPDATED_AT
+}
+
+input QueryReviewsOrderByOrderByClause {
+  column: QueryReviewsOrderByColumn!
+  order: SortOrder!
+}
+
+enum QueryShippingClassesOrderByColumn {
+  AMOUNT
+  CREATED_AT
+  IS_GLOBAL
+  NAME
+  TYPE
+  UPDATED_AT
+}
+
+input QueryShippingClassesOrderByOrderByClause {
+  column: QueryShippingClassesOrderByColumn!
+  order: SortOrder!
+}
+
+enum QueryTagsHasTypeColumn {
+  SLUG
+}
+
+input QueryTagsHasTypeWhereHasConditions {
+  AND: [QueryTagsHasTypeWhereHasConditions!]
+  HAS: QueryTagsHasTypeWhereHasConditionsRelation
+  OR: [QueryTagsHasTypeWhereHasConditions!]
+  column: QueryTagsHasTypeColumn!
+  operator: SQLOperator! = EQ
+  value: String!
+}
+
+input QueryTagsHasTypeWhereHasConditionsRelation {
+  amount: Int! = 1
+  condition: QueryTagsHasTypeWhereHasConditions!
+  operator: SQLOperator = GTE
+  relation: String!
+}
+
+enum QueryTagsOrderByColumn {
+  CREATED_AT
+  NAME
+  UPDATED_AT
+}
+
+input QueryTagsOrderByOrderByClause {
+  column: QueryTagsOrderByColumn!
+  order: SortOrder!
+}
+
+enum QueryTaxClassesOrderByColumn {
+  COUNTRY
+  CREATED_AT
+  NAME
+  RATE
+  STATE
+  UPDATED_AT
+}
+
+input QueryTaxClassesOrderByOrderByClause {
+  column: QueryTaxClassesOrderByColumn!
+  order: SortOrder!
+}
+
+enum QueryTypesOrderByColumn {
+  CREATED_AT
+  NAME
+  UPDATED_AT
+}
+
+input QueryTypesOrderByOrderByClause {
+  column: QueryTypesOrderByColumn!
+  order: SortOrder!
+}
+
+type Question {
+  answer: String
+  createdAt: DateTime
+  feedbacks: [Feedback!]
+  id: ID
+  my_feedback: Feedback
+  negative_feedbacks_count: Float
+  positive_feedbacks_count: Float
+  product: Product
+  product_id: ID
+  question: String
+  shop_id: ID
+  updatedAt: DateTime
+  user: User
+  user_id: Float
+}
+
+type QuestionPaginator {
+  data: [Question!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+input ReadAllNoticeInput {
+  notices: Int!
+}
+
+input ReadSingleNoticeInput {
+  id: ID
+}
+
+type RefreshTokenResponse {
+  accessToken: String!
+  refreshToken: String!
+}
+
+type Refund {
+  amount: String!
+  createdAt: DateTime
+  customer: User
+  description: String!
+  id: ID
+  images: [Attachment!]
+  order: Order
+  refund_reason: RefundReason
+  refund_reason_id: ID!
+  shop: Shop
+  status: RefundStatus
+  title: String!
+  updatedAt: DateTime
+}
+
+input RefundInputType {
+  amount: String!
+  customer: UserInputType
+  description: String!
+  images: [AttachmentInput!]
+  order: OrderInputType
+  refund_reason: RefundReasonInputType
+  refund_reason_id: ID!
+  shop: ShopInputType
+  status: RefundStatus
+  title: String!
+}
+
+type RefundPaginator {
+  data: [Refund!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type RefundPoliciesPaginator {
+  data: [RefundPolicy!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type RefundPolicy {
+  createdAt: DateTime
+  description: String
+  id: ID
+  language: String
+  shop_id: ID
+  slug: String
+  status: RefundPolicyStatus
+  target: RefundPolicyTarget
+  title: String
+  translated_languages: [String!]
+  updatedAt: DateTime
+}
+
+enum RefundPolicyStatus {
+  APPROVED
+  PENDING
+}
+
+enum RefundPolicyTarget {
+  CUSTOMER
+  VENDOR
+}
+
+type RefundReason {
+  createdAt: DateTime
+  id: ID
+  language: String
+  name: String
+  slug: String
+  translated_languages: [String!]
+  updatedAt: DateTime
+}
+
+input RefundReasonInputType {
+  language: String
+  name: String
+  slug: String
+  translated_languages: [String!]
+}
+
+type RefundReasonsPaginator {
+  data: [RefundReason!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+enum RefundStatus {
+  APPROVED
+  PENDING
+  PROCESSING
+  REJECTED
+}
+
+input RegisterUserInput {
+  email: String!
+  name: String!
+  password: String!
+  roles: UserRole! = CUSTOMER
+}
+
+type RegisterUserOutput {
+  accessToken: String!
+  refreshToken: String!
+  user: User!
+}
+
+input ResetPasswordInput {
+  email: String!
+  password: String!
+  token: String!
+}
+
+type Review {
+  abusive_reports: [AbusiveReport!]
+  abusive_reports_count: Float
+  comment: String!
+  createdAt: DateTime
+  customer: User!
+  feedbacks: [Feedback!]
+  id: ID
+  my_feedback: Feedback
+  name: String!
+  negative_feedbacks_count: Float
+  order: Order!
+  photos: [Attachment!]!
+  positive_feedbacks_count: Float
+  product: Product!
+  product_id: Float!
+  rating: Float!
+  shop: Shop!
+  shop_id: String!
+  updatedAt: DateTime
+  user: User!
+  user_id: Float!
+  variation_option_id: String
+}
+
+input ReviewInputType {
+  abusive_reports: [AbusiveReportInputType!]
+  abusive_reports_count: Float
+  comment: String!
+  customer: UserInputType!
+  feedbacks: [FeedbackInputType!]
+  my_feedback: FeedbackInputType
+  name: String!
+  negative_feedbacks_count: Float
+  order: OrderInputType!
+  photos: [AttachmentInput!]!
+  positive_feedbacks_count: Float
+  product: ProductInputType!
+  product_id: Float!
+  rating: Float!
+  shop: ShopInputType!
+  shop_id: String!
+  user: UserInputType!
+  user_id: Float!
+  variation_option_id: String
+}
+
+type ReviewPaginator {
+  abusive_reports: [AbusiveReport!]
+  data: [Review!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type ReviewSystem {
+  name: String
+  value: String
+}
+
+input ReviewSystemInput {
+  name: String
+  value: String
+}
+
+enum SQLOperator {
+  BETWEEN
+  EQ
+  GT
+  GTE
+  IN
+  NEQ
+}
+
+type SaleBuilder {
+  data_type: String
+  product_ids: [ID!]
+}
+
+input SaleBuilderInput {
+  data_type: String
+  product_ids: [ID!]
+}
+
+input SavePaymentMethodInput {
+  method_key: String!
+  payment_gateway: String
+  payment_intent: String
+  save_card: Boolean
+  tracking_number: String
+}
+
+input SeenMessageInput {
+  conversation_id: ID!
+}
+
+type SellingStepItem {
+  description: String
+  image: Attachment
+  title: String
+}
+
+input SellingStepItemInputType {
+  description: String
+  image: AttachmentInput
+  title: String
+}
+
+type SeoSettings {
+  canonicalUrl: String
+  metaDescription: String
+  metaTags: String
+  metaTitle: String
+  ogDescription: String
+  ogImage: Attachment
+  ogTitle: String
+  twitterCardType: String
+  twitterHandle: String
+}
+
+input SeoSettingsInputType {
+  canonicalUrl: String
+  metaDescription: String
+  metaTags: String
+  metaTitle: String
+  ogDescription: String
+  ogImage: AttachmentInput
+  ogTitle: String
+  twitterCardType: String
+  twitterHandle: String
+}
+
+type ServerInfo {
+  max_execution_time: String
+  max_input_time: String
+  memory_limit: String
+  post_max_size: Float
+  upload_max_filesize: Float
+}
+
+input ServerInfoInputType {
+  max_execution_time: String
+  max_input_time: String
+  memory_limit: String
+  post_max_size: Float
+  upload_max_filesize: Float
+}
+
+type SettingAdmin {
+  paymentOrder: Boolean
+  refundOrder: Boolean
+  statusChangeOrder: Boolean
+}
+
+input SettingAdminInputType {
+  paymentOrder: Boolean
+  refundOrder: Boolean
+  statusChangeOrder: Boolean
+}
+
+type SettingCustomer {
+  answerQuestion: Boolean
+  paymentOrder: Boolean
+  refundOrder: Boolean
+  statusChangeOrder: Boolean
+}
+
+input SettingCustomerInputType {
+  answerQuestion: Boolean
+  paymentOrder: Boolean
+  refundOrder: Boolean
+  statusChangeOrder: Boolean
+}
+
+type SettingVendor {
+  createQuestion: Boolean
+  createReview: Boolean
+  paymentOrder: Boolean
+  refundOrder: Boolean
+  statusChangeOrder: Boolean
+}
+
+input SettingVendorInputType {
+  createQuestion: Boolean
+  createReview: Boolean
+  paymentOrder: Boolean
+  refundOrder: Boolean
+  statusChangeOrder: Boolean
+}
+
+type Settings {
+  createdAt: DateTime
+  id: ID
+  language: String!
+  options: SettingsOptions
+  translated_languages: [String!]!
+  updatedAt: DateTime
+}
+
+input SettingsInput {
+  language: String
+  options: SettingsOptionsInput
+}
+
+type SettingsOptions {
+  StripeCardOnly: Boolean
+  collapseLogo: Attachment
+  contactDetails: ContactDetails
+  copyrightText: String
+  currency: String
+  currencyOptions: CurrencyOptions
+  currencyToWalletRatio: Int
+  defaultAi: String
+  defaultPaymentGateway: String
+  deliveryTime: [DeliveryTime!]
+  emailEvent: EventSettings
+  enableCoupons: Boolean
+  enableEmailForDigitalProduct: Boolean
+  enableReviewPopup: Boolean
+  enableTerms: Boolean
+  externalLink: String
+  externalText: String
+  facebook: FacebookSettings
+  freeShipping: Boolean
+  freeShippingAmount: Float
+  google: GoogleSettings
+  guestCheckout: Boolean
+  isMultiCommissionRate: Boolean
+  isProductReview: Boolean
+  isPromoPopUp: Boolean
+  isUnderMaintenance: Boolean
+  logo: Attachment
+  maintenance: Maintenance
+  maxShopDistance: Float
+  maximumQuestionLimit: Float
+  minimumOrderAmount: Float
+  paymentGateway: [PaymentGateway!]
+  promoPopup: PromoPopup
+  pushNotification: AllInput
+  reviewSystem: ReviewSystem
+  seo: SeoSettings
+  server_info: ServerInfo
+  shippingClass: String
+  signupPoints: Int
+  siteLink: String
+  siteSubtitle: String
+  siteTitle: String
+  smsEvent: EventSettings
+  taxClass: String
+  useAi: Boolean
+  useCashOnDelivery: Boolean
+  useEnableGateway: Boolean
+  useGoogleMap: Boolean
+  useMustVerifyEmail: Boolean
+  useOtp: Boolean
+}
+
+input SettingsOptionsInput {
+  StripeCardOnly: Boolean
+  collapseLogo: AttachmentInput
+  contactDetails: ContactDetailsInput
+  copyrightText: String
+  currency: String
+  currencyOptions: CurrencyOptionsInputType
+  currencyToWalletRatio: Int
+  defaultAi: String
+  defaultPaymentGateway: String
+  deliveryTime: [DeliveryTimeInputType!]
+  emailEvent: EventSettingsInputType
+  enableCoupons: Boolean
+  enableEmailForDigitalProduct: Boolean
+  enableReviewPopup: Boolean
+  enableTerms: Boolean
+  externalLink: String
+  externalText: String
+  facebook: FacebookSettingsInputType
+  freeShipping: Boolean
+  freeShippingAmount: Float
+  google: GoogleSettingsInputType
+  guestCheckout: Boolean
+  isMultiCommissionRate: Boolean
+  isProductReview: Boolean
+  isPromoPopUp: Boolean
+  isUnderMaintenance: Boolean
+  logo: AttachmentInput
+  maintenance: MaintenanceInput
+  maxShopDistance: Float
+  maximumQuestionLimit: Float
+  minimumOrderAmount: Float
+  paymentGateway: [PaymentGatewayInputType!]
+  promoPopup: PromoPopupInput
+  pushNotification: AllInputInput
+  reviewSystem: ReviewSystemInput
+  seo: SeoSettingsInputType
+  server_info: ServerInfoInputType
+  shippingClass: String
+  signupPoints: Int
+  siteLink: String
+  siteSubtitle: String
+  siteTitle: String
+  smsEvent: EventSettingsInputType
+  taxClass: String
+  useAi: Boolean
+  useCashOnDelivery: Boolean
+  useEnableGateway: Boolean
+  useGoogleMap: Boolean
+  useMustVerifyEmail: Boolean
+  useOtp: Boolean
+}
+
+type Shipping {
+  amount: Float!
+  createdAt: DateTime
+  id: ID
+  is_global: Boolean!
+  name: String!
+  type: ShippingType!
+  updatedAt: DateTime
+}
+
+enum ShippingType {
+  FIXED
+  FREE
+  PERCENTAGE
+}
+
+type Shop {
+  address: UserAddress
+  balance: Balance
+  cover_image: Attachment
+  createdAt: DateTime
+  description: String
+  distance: Float
+  id: ID
+  is_active: Boolean
+  lat: Float
+  lng: Float
+  logo: Attachment
+  name: String
+  orders_count: Int
+  owner: User!
+  owner_id: Int!
+  ownership_history: Status
+  products_count: Int
+  refunds: [Refund!]
+  settings: ShopSettings
+  slug: String
+  staffs: [User!]
+  updatedAt: DateTime
+}
+
+input ShopInputType {
+  address: UserAddressInputType
+  balance: BalanceInputType
+  cover_image: AttachmentInput
+  description: String
+  distance: Float
+  is_active: Boolean
+  lat: Float
+  lng: Float
+  logo: AttachmentInput
+  name: String
+  orders_count: Int
+  owner: UserInputType!
+  owner_id: Int!
+  ownership_history: StatusInputType
+  products_count: Int
+  refunds: [RefundInputType!]
+  settings: ShopSettingsInputType
+  slug: String
+  staffs: [UserInputType!]
+}
+
+type ShopMaintenance {
+  description: String
+  image: Attachment
+  start: DateTime
+  title: String
+  until: DateTime
+}
+
+input ShopMaintenanceInputType {
+  description: String
+  image: AttachmentInput
+  start: DateTime
+  title: String
+  until: DateTime
+}
+
+type ShopPaginator {
+  data: [Shop!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type ShopSettings {
+  askForAQuote: AskForAQuote
+  contact: String
+  isShopUnderMaintenance: String
+  location: Location
+  notifications: Notifications
+  shopMaintenance: ShopMaintenance
+  socials: [ShopSocials!]
+  website: String
+}
+
+input ShopSettingsInputType {
+  askForAQuote: AskForAQuoteInputType
+  contact: String
+  isShopUnderMaintenance: String
+  location: LocationInput
+  notifications: NotificationsInputType
+  shopMaintenance: ShopMaintenanceInputType
+  socials: [ShopSocialInput!]
+  website: String
+}
+
+input ShopSocialInput {
+  icon: String
+  url: String
+}
+
+type ShopSocials {
+  icon: String
+  url: String
+}
+
+type Showcase {
+  button2Link: String
+  button2Name: String
+  buttonLink: String
+  buttonName: String
+  description: String
+  image: Attachment
+  title: String
+}
+
+input ShowcaseInputType {
+  button2Link: String
+  button2Name: String
+  buttonLink: String
+  buttonName: String
+  description: String
+  image: AttachmentInput
+  title: String
+}
+
+type Social {
+  link: String!
+  type: String!
+}
+
+input SocialInputType {
+  link: String!
+  type: String!
+}
+
+input SocialLoginInput {
+  accessToken: String!
+  provider: String!
+}
+
+enum SortOrder {
+  ASC
+  DESC
+}
+
+type Status {
+  status: OwnerShipTransferStatus
+}
+
+input StatusInputType {
+  status: OwnerShipTransferStatus
+}
+
+type StoreNotice {
+  createdAt: DateTime
+  created_by: ID
+  creator: User
+  creator_role: String
+  deleted_at: String
+  description: String
+  effective_from: String
+  expire_at: String!
+  expired_at: String!
+  id: ID
+  is_read: Boolean
+  notice: String!
+  priority: StoreNoticePriority!
+  read_status: StoreNoticeRead
+  received_by: [Float!]
+  shops: [Shop!]
+  type: StoreNoticeType
+  updatedAt: DateTime
+  updated_by: ID
+  users: [User!]
+}
+
+enum StoreNoticePriority {
+  High
+  Low
+  Medium
+}
+
+type StoreNoticeRead {
+  email: String
+  id: ID
+  name: String
+  pivot: StoreNoticeUserPivot
+}
+
+enum StoreNoticeType {
+  ALL_SHOP
+  ALL_VENDOR
+  SPECIFIC_SHOP
+  SPECIFIC_VENDOR
+}
+
+type StoreNoticeUserPivot {
+  is_read: Boolean!
+  store_notice_id: ID
+  user_id: ID
+}
+
+type StoreNoticesPaginator {
+  data: [StoreNotice!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type SuccessResponse {
+  message: String!
+  success: Boolean!
+}
+
+type Tag {
+  createdAt: DateTime
+  details: String
+  icon: String
+  id: ID
+  image: Attachment
+  language: String!
+  name: String!
+  parent: Int
+  products: [Product!]
+  slug: String!
+  translated_languages: [String!]!
+  type: Type
+  updatedAt: DateTime
+}
+
+input TagInputType {
+  details: String
+  icon: String
+  image: AttachmentInput
+  language: String!
+  name: String!
+  parent: Int
+  products: [ProductInputType!]
+  slug: String!
+  translated_languages: [String!]!
+  type: TypeInputType
+}
+
+type TagPaginator {
+  data: [Tag!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type Tax {
+  city: String
+  country: String
+  createdAt: DateTime
+  id: ID
+  is_global: Boolean!
+  name: String!
+  on_shipping: Boolean
+  priority: Int
+  rate: Float!
+  state: String
+  updatedAt: DateTime
+  zip: String
+}
+
+type TermsAndConditionPaginator {
+  data: [TermsAndConditions!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+type TermsAndConditions {
+  createdAt: DateTime
+  description: String
+  id: ID
+  is_approved: Boolean
+  issued_by: String
+  language: String
+  shop_id: ID
+  slug: String
+  title: String!
+  translated_languages: [String!]
+  type: String
+  updatedAt: DateTime
+  user_id: ID
+}
+
+type TodayTotalOrderByStatus {
+  cancelled: Float
+  complete: Float
+  failed: Float
+  localFacility: Float
+  outForDelivery: Float
+  pending: Float
+  processing: Float
+  refunded: Float
+}
+
+input TodayTotalOrderByStatusInputType {
+  cancelled: Float
+  complete: Float
+  failed: Float
+  localFacility: Float
+  outForDelivery: Float
+  pending: Float
+  processing: Float
+  refunded: Float
+}
+
+type TopRatedProduct {
+  actual_rating: Float
+  description: String
+  id: ID
+  image: Attachment
+  max_price: Float
+  min_price: Float
+  name: String
+  product_type: String
+  rating_count: Int
+  regular_price: Float
+  sale_price: Float
+  slug: String
+  total_rating: Int
+  type_id: Int!
+  type_slug: String
+}
+
+type TotalYearSaleByMonth {
+  month: String
+  total: Float
+}
+
+input TransferShopOwnershipInput {
+  address: UserAddressInputType
+  balance: BalanceInput
+  categories: [ID!]
+  cover_image: AttachmentInput
+  description: String
+  logo: AttachmentInput
+  name: String
+  settings: ShopSettingsInputType
+  slug: String
+}
+
+type Type {
+  banners: [Banner!]
+  createdAt: DateTime
+  icon: String
+  id: ID
+  image: Attachment
+  language: String
+  name: String
+  promotional_sliders: [Attachment!]
+  settings: TypeSettings
+  slug: String
+  translated_languages: [String!]
+  updatedAt: DateTime
+}
+
+input TypeInputType {
+  banners: [BannerInputType!]
+  icon: String
+  image: AttachmentInput
+  language: String
+  name: String
+  promotional_sliders: [AttachmentInput!]
+  settings: TypeSettingsInput
+  slug: String
+  translated_languages: [String!]
+}
+
+type TypeSettings {
+  authors: CompactDemoAuthorsInput
+  bestSelling: CompactBestSellingInput
+  category: CompactDemoCategoryInput
+  handpickedProducts: CompactDemoHandpickedProductsInput
+  isHome: Boolean
+  layoutType: String
+  manufactures: CompactDemoManufacturesInput
+  newArrival: CompactDemoNewArrivalInput
+  popularProducts: CompactDemoPopularProductsInput
+  productCard: String
+}
+
+input TypeSettingsInput {
+  authors: CompactDemoAuthorsInputType
+  bestSelling: CompactBestSellingInputType
+  category: CompactDemoCategoryInputType
+  handpickedProducts: CompactDemoHandpickedProductsInputType
+  isHome: Boolean
+  layoutType: String
+  manufactures: CompactDemoManufacturesInputType
+  newArrival: CompactDemoNewArrivalInputType
+  popularProducts: CompactDemoPopularProductsInputType
+  productCard: String
+}
+
+input UpdateAddressInput {
+  address: UserAddressInputType
+  customer: UserInputType
+  default: Boolean
+  id: ID!
+  title: String
+  type: AddressType
+}
+
+input UpdateAttributeInput {
+  id: ID!
+  language: String
+  name: String
+  shop_id: String
+  values: [AttributeValueInput!]
+}
+
+input UpdateAuthorInput {
+  bio: String
+  born: String
+  cover_image: AttachmentInput
+  death: String
+  id: ID!
+  image: AttachmentInput
+  is_approved: Boolean
+  language: String
+  languages: String
+  name: String
+  products_count: Int
+  quote: String
+  shop_id: ID
+  slug: String
+  socials: [ShopSocialInput!]
+}
+
+input UpdateCardInput {
+  default_card: Boolean
+  id: ID!
+  method_key: String
+}
+
+input UpdateCategoryInput {
+  details: String
+  icon: String
+  id: ID!
+  image: AttachmentInput
+  language: String
+  name: String
+  parent: ID
+  slug: String
+  type: ConnectTypeBelongsTo
+  type_id: ID
+}
+
+input UpdateCouponInput {
+  active_from: String
+  amount: Float
+  code: String
+  description: String
+  expire_at: String
+  id: ID!
+  image: AttachmentInput
+  is_approve: Boolean
+  language: String
+  minimum_cart_amount: Float
+  shop_id: ID
+  target: Boolean
+  type: String
+  user_id: ID
+}
+
+input UpdateEmailUserInput {
+  email: String!
+}
+
+input UpdateFaqInput {
+  faq_description: String
+  faq_title: String
+  faq_type: String
+  id: ID!
+  issued_by: String
+  language: String
+  shop_id: ID
+  slug: String
+  user_id: ID
+}
+
+input UpdateFlashSaleInput {
+  cover_image: AttachmentInput
+  description: String
+  end_date: String
+  id: ID!
+  image: AttachmentInput
+  language: String
+  rate: Float
+  sale_builder: SaleBuilderInput
+  sale_status: Boolean
+  slug: String
+  start_date: String
+  title: String
+  type: String
+}
+
+input UpdateFlashSaleRequestInput {
+  flash_sale_id: ID
+  id: ID
+  language: String
+  note: String
+  requested_product_ids: [ID!]
+  title: String
+}
+
+input UpdateManufacturerInput {
+  cover_image: AttachmentInput
+  description: String
+  id: ID!
+  image: AttachmentInput
+  is_approved: Boolean
+  language: String
+  name: String
+  products_count: Int
+  shop_id: ID
+  slug: String
+  socials: [ShopSocialInput!]
+  type_id: ID!
+  website: String
+}
+
+input UpdateNotifyLogInput {
+  receiver: Int!
+}
+
+input UpdateOrderInput {
+  amount: Float
+  billing_address: UserAddressInput
+  card: CardInput
+  coupon_id: ID
+  customer_contact: String
+  customer_id: ID
+  customer_name: String
+  delivery_fee: Float
+  delivery_time: String
+  discount: Float
+  id: ID!
+  isFullWalletPayment: Boolean
+  language: String
+  note: String
+  order_status: String
+  paid_total: Float
+  payment_gateway: PaymentGatewayType
+  payment_sub_gateway: String
+  products: [ConnectProductOrderPivot!]
+  sales_tax: Float
+  shipping_address: UserAddressInput
+  shop_id: ID
+  total: Float
+  use_wallet_points: Boolean
+}
+
+input UpdateOrderStatusInput {
+  color: String
+  id: ID!
+  language: String
+  name: String
+  serial: Int
+}
+
+input UpdateOwnershipTransferInput {
+  address: UserAddressInputType
+  balance_info: BalanceInputType
+  cover_image: AttachmentInput
+  current_owner: UserInputType
+  description: String
+  id: ID!
+  language: String
+  message: String
+  name: String
+  order_info: TodayTotalOrderByStatusInputType
+  previous_owner: UserInputType
+  refund_info: [RefundInputType!]
+  settings: ShopSettingsInputType
+  shop: ShopInputType
+  status: String
+  transaction_identifier: String
+  updatedAt: DateTime
+  withdrawal_info: [WithdrawInputType!]
+}
+
+input UpdateProductInput {
+  author: AuthorInputType
+  author_id: ID
+  categories: [ID!]
+  description: String
+  external_product_button_text: String
+  external_product_url: String
+  gallery: [AttachmentInput!]
+  height: String
+  id: ID!
+  image: AttachmentInput
+  in_flash_sale: Int
+  in_stock: Boolean
+  is_digital: Boolean
+  is_external: Boolean
+  is_taxable: Boolean
+  language: String
+  length: String
+  manufacturer: ManufacturerInputType
+  manufacturer_id: ID
+  max_price: Float
+  min_price: Float
+  my_review: [ReviewInputType!]
+  name: String
+  price: Float
+  product_type: ProductType
+  quantity: Int
+  sale_price: Float
+  shop_id: ID
+  sku: String
+  slug: String
+  sold_quantity: Int
+  status: ProductStatus
+  tags: [ID!]
+  type_id: ID
+  unit: String
+  variation_options: UpsertVariationsHasMany
+  variations: [AttributeValueInputType!]
+  video: [VideoInputType!]
+  width: String
+}
+
+input UpdateQuestionInput {
+  answer: String
+  feedbacks: [FeedbackInputType!]
+  my_feedback: FeedbackInputType
+  negative_feedbacks_count: Float
+  positive_feedbacks_count: Float
+  product_id: ID
+  question: String
+  shop_id: ID
+  user_id: Float
+}
+
+input UpdateRefundInput {
+  id: ID!
+  status: RefundStatus!
+}
+
+input UpdateRefundPolicyInput {
+  description: String
+  id: ID!
+  language: String
+  shop_id: ID
+  slug: String
+  status: String
+  target: String
+  title: String
+}
+
+input UpdateRefundReasonInput {
+  id: ID!
+  language: String
+  name: String
+  slug: String
+}
+
+input UpdateReviewInput {
+  comment: String
+  id: ID
+  order_id: String
+  photos: [AttachmentInput!]
+  product_id: String
+  rating: Float
+  shop_id: String
+  variation_option_id: ID
+}
+
+input UpdateShippingInput {
+  amount: Float
+  id: ID!
+  is_global: Boolean = true
+  name: String
+  type: ShippingType
+}
+
+input UpdateShopInput {
+  address: UserAddressInputType
+  balance: BalanceInput
+  categories: [ID!]
+  cover_image: AttachmentInput
+  description: String
+  id: ID!
+  logo: AttachmentInput
+  name: String
+  settings: ShopSettingsInputType
+  slug: String
+}
+
+input UpdateStoreNoticeInput {
+  description: String
+  effective_from: String
+  expired_at: String
+  id: ID
+  notice: String
+  priority: String
+  received_by: [Float!]
+  type: String
+}
+
+input UpdateTagInput {
+  details: String
+  icon: String
+  id: ID!
+  image: AttachmentInput
+  language: String
+  name: String
+  slug: String
+  type: ConnectTypeBelongsTo
+  type_id: ID
+}
+
+input UpdateTaxInput {
+  city: String
+  country: String
+  id: ID!
+  is_global: Boolean = true
+  name: String
+  on_shipping: Boolean
+  priority: Int
+  rate: Float
+  state: String
+  zip: String
+}
+
+input UpdateTermsConditionsInput {
+  description: String
+  id: ID!
+  issued_by: String
+  language: String
+  shop_id: ID
+  slug: String
+  title: String
+  type: String
+  user_id: ID
+}
+
+input UpdateTypeInput {
+  banners: [BannerInputType!]
+  icon: String
+  id: ID
+  language: String
+  name: String
+  promotional_sliders: [AttachmentInput!]
+  settings: TypeSettingsInput
+  slug: String
+}
+
+input UpdateUserInput {
+  address: AddressHasMany
+  email: String
+  id: ID!
+  name: String
+  password: String
+  profile: ProfileHasOne
+  roles: UserRole = CUSTOMER
+}
+
+input UpsertVariationsHasMany {
+  delete: [ID!]
+  upsert: [VariationInput!]
+}
+
+type User {
+  address: [Address!]!
+  createdAt: DateTime!
+  email: String!
+  firstName: String
+  id: ID!
+  lastName: String
+  last_order: Order!
+  name: String!
+  orders: [Order!]!
+  password: String!
+  picture: String
+  profile: Profile!
+  roles: [UserRole!]!
+  updatedAt: DateTime!
+  wallet: Wallet!
+}
+
+type UserAddress {
+  city: String
+  country: String
+  state: String
+  street_address: String
+  zip: String
+}
+
+input UserAddressInput {
+  city: String
+  country: String
+  state: String
+  street_address: String
+  zip: String
+}
+
+input UserAddressInputType {
+  city: String
+  country: String
+  state: String
+  street_address: String
+  zip: String
+}
+
+input UserAddressUpsertInput {
+  address: UserAddressInput!
+  default: Boolean
+  title: ID
+  type: AddressType!
+}
+
+input UserInputType {
+  address: [AddressInputType!]!
+  createdAt: DateTime!
+  email: String!
+  firstName: String
+  id: ID!
+  lastName: String
+  last_order: OrderInputType!
+  name: String!
+  orders: [OrderInputType!]!
+  password: String!
+  picture: String
+  profile: ProfileInputType!
+  roles: [UserRole!]!
+  updatedAt: DateTime!
+  wallet: WalletInputType!
+}
+
+input UserProfileInput {
+  avatar: ID
+  bio: String
+  contact: String
+  socials: [SocialInputType!]
+}
+
+enum UserRole {
+  ADMIN
+  CUSTOMER
+  SUPER_ADMIN
+}
+
+type UserStory {
+  description: String
+  link: String
+  thumbnail: Attachment
+  title: String
+}
+
+input UserStoryInputType {
+  description: String
+  link: String
+  thumbnail: AttachmentInput
+  title: String
+}
+
+type UserToNotify {
+  id: ID
+  name: String
+  slug: String
+}
+
+type Variation {
+  digital_file: VariationDigitalFile
+  id: ID!
+  image: Attachment
+  is_digital: Boolean!
+  is_disable: Boolean!
+  options: [VariationOption!]!
+  price: Float!
+  product: Product
+  quantity: Int!
+  sale_price: Float
+  sku: String!
+  sold_quantity: Int!
+  title: String!
+}
+
+type VariationDigitalFile {
+  attachment_id: Int!
+  createdAt: DateTime
+  id: ID
+  updatedAt: DateTime
+  url: String!
+}
+
+input VariationDigitalFileInputType {
+  attachment_id: Int!
+  url: String!
+}
+
+input VariationInput {
+  digital_file: VariationDigitalFileInputType
+  id: ID!
+  image: AttachmentInput
+  is_digital: Boolean!
+  is_disable: Boolean!
+  options: [VariationOptionInputType!]!
+  price: Float!
+  product: ProductInputType
+  quantity: Int!
+  sale_price: Float
+  sku: String!
+  sold_quantity: Int!
+  title: String!
+}
+
+input VariationInputType {
+  digital_file: VariationDigitalFileInputType
+  id: ID!
+  image: AttachmentInput
+  is_digital: Boolean!
+  is_disable: Boolean!
+  options: [VariationOptionInputType!]!
+  price: Float!
+  product: ProductInputType
+  quantity: Int!
+  sale_price: Float
+  sku: String!
+  sold_quantity: Int!
+  title: String!
+}
+
+type VariationOption {
+  name: String!
+  value: String!
+}
+
+input VariationOptionInputType {
+  name: String!
+  value: String!
+}
+
+type VerifiedCheckoutData {
+  shipping_charge: Float!
+  total_tax: Float!
+  unavailable_products: [ID!]!
+  wallet_amount: Int!
+  wallet_currency: Float!
+}
+
+input VerifyCouponInput {
+  code: String
+  item: [VerifyCouponItemInput!]
+  sub_total: Float
+}
+
+input VerifyCouponItemInput {
+  id: ID
+  image: String
+  in_flash_sale: Int
+  is_digital: Boolean
+  itemTotal: Int
+  language: String
+  name: String
+  price: Int
+  quantity: Int
+  shop_id: ID
+  slug: String
+  stock: Int
+  unit: String
+}
+
+type VerifyCouponResponse {
+  coupon: Coupon!
+  is_valid: Boolean!
+  message: String!
+}
+
+input VerifyForgetPasswordTokenInput {
+  email: String!
+  token: String!
+}
+
+input VerifyOtpInput {
+  code: String!
+  otp_id: String!
+  phone_number: String!
+}
+
+type Video {
+  url: String!
+}
+
+input VideoInputType {
+  url: String!
+}
+
+type Wallet {
+  available_points: Int!
+  points_used: Int!
+  total_points: Int!
+}
+
+input WalletInputType {
+  available_points: Int! = 0
+  points_used: Int! = 0
+  total_points: Int! = 0
+}
+
+type WalletPoint {
+  amount: Float!
+  id: ID!
+}
+
+input WalletPointInputType {
+  amount: Float!
+  id: ID!
+}
+
+type Withdraw {
+  amount: Float!
+  createdAt: DateTime
+  details: String!
+  id: ID
+  note: String!
+  payment_method: String!
+  shop: Shop
+  shop_id: ID!
+  status: WithdrawStatus
+  updatedAt: DateTime
+}
+
+input WithdrawInputType {
+  amount: Float!
+  details: String!
+  note: String!
+  payment_method: String!
+  shop: ShopInputType
+  shop_id: ID!
+  status: WithdrawStatus
+}
+
+type WithdrawPaginator {
+  data: [Withdraw!]!
+  paginatorInfo: PaginatorInfo!
+}
+
+enum WithdrawStatus {
+  APPROVED
+  ON_HOLD
+  PENDING
+  PROCESSING
+  REJECTED
+}
